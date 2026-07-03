@@ -1,0 +1,73 @@
+# Consulting Skills Lab
+
+Reusable Codex-style consulting skills for strategy, transformation, diligence, and executive communication.
+
+This repository packages practical consulting workflows as portable skill folders. The first release focuses on three recurring needs: scaling agentic AI beyond pilots, running rapid commercial due diligence, and turning analysis into executive decision memos.
+
+## Who this is for
+
+- Builders who want consulting-grade structure for ambiguous business problems.
+- Strategy, product, operations, and transformation teams using AI assistants.
+- Solo operators who need repeatable issue trees, memos, workplans, and risk registers.
+
+## Skills
+
+| Skill | Use it for | Main output |
+| --- | --- | --- |
+| `agentic-ai-transformation-office` | AI transformation, agentic AI scaling, pilot-to-value diagnosis, workflow redesign, governance | Transformation office plan, portfolio scoring, 30/60/90 roadmap |
+| `commercial-due-diligence-sprint` | Market scan, target assessment, investment memo, value creation thesis | Diligence issue tree, evidence plan, IC-ready synthesis |
+| `executive-decision-memo` | Board memo, CEO update, steering committee note, decision recommendation | Concise recommendation memo with options, risks, and next actions |
+
+## Install
+
+Copy the skill folders you want into your local Codex skills directory:
+
+```powershell
+Copy-Item -Recurse .\skills\agentic-ai-transformation-office "$env:USERPROFILE\.codex\skills\"
+Copy-Item -Recurse .\skills\commercial-due-diligence-sprint "$env:USERPROFILE\.codex\skills\"
+Copy-Item -Recurse .\skills\executive-decision-memo "$env:USERPROFILE\.codex\skills\"
+```
+
+Then start a new Codex session and trigger a skill by name, for example:
+
+```text
+Use $agentic-ai-transformation-office to diagnose why our AI pilots are not scaling.
+```
+
+## Validate
+
+Run the repository validator:
+
+```bash
+python scripts/validate_skills.py
+```
+
+If you have the local Codex skill creator installed, you can also run its quick validator against each skill folder.
+
+## Design Principles
+
+- Decision first: outputs should help someone decide, not just summarize.
+- Evidence aware: confidence and missing evidence must be visible.
+- Workflow based: AI and transformation work should change operating routines, not only introduce tools.
+- Practical artifacts: every skill should provide templates a team can use immediately.
+- Public-source friendly: references summarize public signals without copying long passages.
+
+## Current Signals Used
+
+The AI transformation skill references public 2025-2026 signals from McKinsey, BCG, Bain, and industry reporting about AI value realization, agentic AI adoption, and organizational barriers to scaling. These references are used as context, not as proprietary methodology.
+
+## Contributing
+
+New skills should include:
+
+- A clear trigger description in `SKILL.md`.
+- At least one reusable workflow.
+- Concrete output templates.
+- Guardrails for overclaiming, weak evidence, and regulated domains.
+- Reference files when the workflow depends on external context.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+
+## License
+
+MIT

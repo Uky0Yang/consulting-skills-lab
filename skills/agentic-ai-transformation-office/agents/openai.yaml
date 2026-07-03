@@ -1,0 +1,4 @@
+interface:
+  display_name: "Agentic AI Transformation Office"
+  short_description: "Scale agentic AI from pilots to value"
+  default_prompt: "Use $agentic-ai-transformation-office to diagnose why our AI pilots are not scaling and propose a value-realization plan."

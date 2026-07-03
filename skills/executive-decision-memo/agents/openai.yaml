@@ -1,0 +1,4 @@
+interface:
+  display_name: "Executive Decision Memo"
+  short_description: "Turn analysis into a board-ready memo"
+  default_prompt: "Use $executive-decision-memo to turn this analysis into a concise recommendation memo."

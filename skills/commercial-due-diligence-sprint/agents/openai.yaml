@@ -1,0 +1,4 @@
+interface:
+  display_name: "Commercial Due Diligence Sprint"
+  short_description: "Build rapid market and deal diligence"
+  default_prompt: "Use $commercial-due-diligence-sprint to structure a rapid commercial diligence memo for this target."
