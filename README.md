@@ -2,7 +2,7 @@
 
 Reusable Codex-style consulting skills for strategy, transformation, diligence, and executive communication.
 
-This repository packages practical consulting workflows as portable skill folders. The first release focuses on three recurring needs: scaling agentic AI beyond pilots, running rapid commercial due diligence, and turning analysis into executive decision memos.
+This repository packages practical consulting workflows as portable skill folders. The current release focuses on recurring needs: scaling agentic AI beyond pilots, mapping markets from messy signals, running rapid commercial due diligence, and turning analysis into executive decision memos.
 
 ## Who this is for
 
@@ -15,6 +15,7 @@ This repository packages practical consulting workflows as portable skill folder
 | Skill | Use it for | Main output |
 | --- | --- | --- |
 | `agentic-ai-transformation-office` | AI transformation, agentic AI scaling, pilot-to-value diagnosis, workflow redesign, governance | Transformation office plan, portfolio scoring, 30/60/90 roadmap |
+| `market-map-signal-scan` | Market analysis, competitive landscape, trend scan, opportunity gap assessment, category entry | Market map, signal register, opportunity gap matrix, decision gate |
 | `commercial-due-diligence-sprint` | Market scan, target assessment, investment memo, value creation thesis | Diligence issue tree, evidence plan, IC-ready synthesis |
 | `executive-decision-memo` | Board memo, CEO update, steering committee note, decision recommendation | Concise recommendation memo with options, risks, and next actions |
 
@@ -24,6 +25,7 @@ Copy the skill folders you want into your local Codex skills directory:
 
 ```powershell
 Copy-Item -Recurse .\skills\agentic-ai-transformation-office "$env:USERPROFILE\.codex\skills\"
+Copy-Item -Recurse .\skills\market-map-signal-scan "$env:USERPROFILE\.codex\skills\"
 Copy-Item -Recurse .\skills\commercial-due-diligence-sprint "$env:USERPROFILE\.codex\skills\"
 Copy-Item -Recurse .\skills\executive-decision-memo "$env:USERPROFILE\.codex\skills\"
 ```
@@ -32,6 +34,10 @@ Then start a new Codex session and trigger a skill by name, for example:
 
 ```text
 Use $agentic-ai-transformation-office to diagnose why our AI pilots are not scaling.
+```
+
+```text
+Use $market-map-signal-scan to analyze the market for AI meeting assistants and identify credible opportunity gaps.
 ```
 
 ## Validate

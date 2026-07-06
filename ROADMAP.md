@@ -9,6 +9,11 @@
 - Add repository-level validation.
 - Add public reference notes.
 
+## v0.2
+
+- Add `market-map-signal-scan` for market analysis, competitive landscapes, signal confidence, and opportunity gap assessment.
+- Add GitHub pattern notes for differentiating against generic deep-research and market-research agent demos.
+
 ## Near Term
 
 - Add example prompts and sample outputs for each skill.

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Market Map Signal Scan"
+  short_description: "Map markets from signals to opportunity"
+  default_prompt: "Use $market-map-signal-scan to analyze this market, map the competitive landscape, and identify credible opportunity gaps."
