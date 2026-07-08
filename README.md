@@ -2,7 +2,7 @@
 
 Reusable Codex-style consulting skills for strategy, transformation, diligence, and executive communication.
 
-This repository packages practical consulting workflows as portable skill folders. The current release focuses on recurring needs: scaling agentic AI beyond pilots, mapping markets from messy signals, running rapid commercial due diligence, and turning analysis into executive decision memos.
+This repository packages practical consulting workflows as portable skill folders. The current release covers scaling agentic AI beyond pilots, mapping markets from messy signals, running rapid commercial due diligence, turning analysis into executive decision memos, and coaching case interviews with original practice cases.
 
 ## Who this is for
 
@@ -18,6 +18,7 @@ This repository packages practical consulting workflows as portable skill folder
 | `market-map-signal-scan` | Market analysis, competitive landscape, trend scan, opportunity gap assessment, category entry | Market map, signal register, opportunity gap matrix, decision gate |
 | `commercial-due-diligence-sprint` | Market scan, target assessment, investment memo, value creation thesis | Diligence issue tree, evidence plan, IC-ready synthesis |
 | `executive-decision-memo` | Board memo, CEO update, steering committee note, decision recommendation | Concise recommendation memo with options, risks, and next actions |
+| `consulting-case-interview-coach` | Mock cases, case math, interviewer-style feedback, practice planning | Interactive interview, anchored scorecard, targeted drill |
 
 ## Install
 
@@ -28,6 +29,7 @@ Copy-Item -Recurse .\skills\agentic-ai-transformation-office "$env:USERPROFILE\.
 Copy-Item -Recurse .\skills\market-map-signal-scan "$env:USERPROFILE\.codex\skills\"
 Copy-Item -Recurse .\skills\commercial-due-diligence-sprint "$env:USERPROFILE\.codex\skills\"
 Copy-Item -Recurse .\skills\executive-decision-memo "$env:USERPROFILE\.codex\skills\"
+Copy-Item -Recurse .\skills\consulting-case-interview-coach "$env:USERPROFILE\.codex\skills\"
 ```
 
 Then start a new Codex session and trigger a skill by name, for example:
@@ -38,6 +40,10 @@ Use $agentic-ai-transformation-office to diagnose why our AI pilots are not scal
 
 ```text
 Use $market-map-signal-scan to analyze the market for AI meeting assistants and identify credible opportunity gaps.
+```
+
+```text
+Use $consulting-case-interview-coach to run a hard candidate-led case and score my performance.
 ```
 
 ## Validate
@@ -57,10 +63,13 @@ If you have the local Codex skill creator installed, you can also run its quick 
 - Workflow based: AI and transformation work should change operating routines, not only introduce tools.
 - Practical artifacts: every skill should provide templates a team can use immediately.
 - Public-source friendly: references summarize public signals without copying long passages.
+- Original by default: practice cases are newly written and third-party casebooks are linked, not mirrored.
 
 ## Current Signals Used
 
 The AI transformation skill references public 2025-2026 signals from McKinsey, BCG, Bain, and industry reporting about AI value realization, agentic AI adoption, and organizational barriers to scaling. These references are used as context, not as proprietary methodology.
+
+The case-interview coach includes an official-source guide checked in July 2026. It links to current firm and consulting-club resources while keeping copyrighted casebooks out of the repository.
 
 ## Contributing
 

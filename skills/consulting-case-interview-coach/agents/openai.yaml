@@ -1,0 +1,4 @@
+interface:
+  display_name: "Consulting Case Interview Coach"
+  short_description: "Run realistic cases and give structured feedback"
+  default_prompt: "Use $consulting-case-interview-coach to run a realistic case interview and score my performance."
