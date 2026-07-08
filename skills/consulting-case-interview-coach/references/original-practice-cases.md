@@ -4,8 +4,9 @@ These cases were created for this repository. They do not reproduce any third-pa
 
 ## Case 1: Northstar Claims
 
-**Format:** candidate-led  
-**Difficulty:** medium  
+**Format:** candidate-led
+
+**Difficulty:** medium
 **Primary skills:** profitability, operations, AI investment, break-even math
 
 ### Opening prompt
@@ -74,8 +75,9 @@ Launch a controlled rollout because adjusted payback remains under two years, bu
 
 ## Case 2: GridLoop Batteries
 
-**Format:** candidate-led  
-**Difficulty:** hard  
+**Format:** candidate-led
+
+**Difficulty:** hard
 **Primary skills:** market entry, capacity economics, regulation, strategic judgment
 
 ### Opening prompt
@@ -140,8 +142,9 @@ Proceed conditionally with the full-scale plant because it remains slightly abov
 
 ## Case 3: Harbor City Heat
 
-**Format:** interviewer-led  
-**Difficulty:** medium  
+**Format:** interviewer-led
+
+**Difficulty:** medium
 **Primary skills:** public sector, climate adaptation, prioritization, cost-effectiveness
 
 ### Opening prompt
@@ -201,8 +204,9 @@ Do not approve the initial portfolio unchanged. Preserve cooling centers as the 
 
 ## Case 4: Meridian Cloud ERP
 
-**Format:** interviewer-led  
-**Difficulty:** hard  
+**Format:** interviewer-led
+
+**Difficulty:** hard
 **Primary skills:** digital transformation, NPV, risk, sequencing
 
 ### Opening prompt
