@@ -1,8 +1,8 @@
 # Consulting Skills Lab
 
-Reusable Codex-style consulting skills for strategy, transformation, diligence, and executive communication.
+Reusable Codex-style consulting skills for strategy, transformation, diligence, executive communication, interviews, and presentation design.
 
-This repository packages practical consulting workflows as portable skill folders. The current release covers scaling agentic AI beyond pilots, mapping markets from messy signals, running rapid commercial due diligence, turning analysis into executive decision memos, and coaching case interviews with original practice cases.
+This repository packages practical consulting workflows as portable skill folders. The current release covers scaling agentic AI beyond pilots, mapping markets from messy signals, running rapid commercial due diligence, turning analysis into executive decision memos, coaching case interviews, and formatting analytical slides.
 
 ## Who this is for
 
@@ -19,6 +19,7 @@ This repository packages practical consulting workflows as portable skill folder
 | `commercial-due-diligence-sprint` | Market scan, target assessment, investment memo, value creation thesis | Diligence issue tree, evidence plan, IC-ready synthesis |
 | `executive-decision-memo` | Board memo, CEO update, steering committee note, decision recommendation | Concise recommendation memo with options, risks, and next actions |
 | `consulting-case-interview-coach` | Mock cases, case math, interviewer-style feedback, practice planning | Interactive interview, anchored scorecard, targeted drill |
+| `consulting-template-style` | Consulting decks, chart books, slide redesign, executive presentation formatting | MBB-informed style selection, layout map, formatting and QA rules |
 
 ## Install
 
@@ -30,6 +31,7 @@ Copy-Item -Recurse .\skills\market-map-signal-scan "$env:USERPROFILE\.codex\skil
 Copy-Item -Recurse .\skills\commercial-due-diligence-sprint "$env:USERPROFILE\.codex\skills\"
 Copy-Item -Recurse .\skills\executive-decision-memo "$env:USERPROFILE\.codex\skills\"
 Copy-Item -Recurse .\skills\consulting-case-interview-coach "$env:USERPROFILE\.codex\skills\"
+Copy-Item -Recurse .\skills\consulting-template-style "$env:USERPROFILE\.codex\skills\"
 ```
 
 Then start a new Codex session and trigger a skill by name, for example:
@@ -44,6 +46,10 @@ Use $market-map-signal-scan to analyze the market for AI meeting assistants and 
 
 ```text
 Use $consulting-case-interview-coach to run a hard candidate-led case and score my performance.
+```
+
+```text
+Use $consulting-template-style to redesign this market analysis deck in a Bain-informed style.
 ```
 
 ## Validate
@@ -64,6 +70,7 @@ If you have the local Codex skill creator installed, you can also run its quick 
 - Practical artifacts: every skill should provide templates a team can use immediately.
 - Public-source friendly: references summarize public signals without copying long passages.
 - Original by default: practice cases are newly written and third-party casebooks are linked, not mirrored.
+- Rights aware: presentation rules are distilled from reference decks without redistributing source templates, logos, or client material.
 
 ## Current Signals Used
 

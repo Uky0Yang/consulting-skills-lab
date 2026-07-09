@@ -1,0 +1,4 @@
+interface:
+  display_name: "Consulting Template Style"
+  short_description: "Format slides with MBB-inspired consulting grammar"
+  default_prompt: "Use $consulting-template-style to format this deck in a consistent Bain-, BCG-, or McKinsey-informed consulting style."

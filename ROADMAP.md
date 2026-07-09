@@ -14,6 +14,7 @@
 - Add `market-map-signal-scan` for market analysis, competitive landscapes, signal confidence, and opportunity gap assessment.
 - Add GitHub pattern notes for differentiating against generic deep-research and market-research agent demos.
 - Add `consulting-case-interview-coach` with anchored feedback, four original cases, and a current-source guide.
+- Add `consulting-template-style` with McKinsey-, Bain-, and BCG-informed slide grammar, tokens, archetypes, and QA.
 
 ## Near Term
 
@@ -23,6 +24,7 @@
 - Add a `value-creation-plan` skill for post-diligence 100-day plans.
 - Add more original cases for healthcare, pricing, private equity, and operations.
 - Add a machine-readable index for original cases by type, industry, geography, and difficulty.
+- Add original, brand-neutral slide examples generated from the consulting layout catalog.
 
 ## Later
 

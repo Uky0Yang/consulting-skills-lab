@@ -1,0 +1,102 @@
+{
+  "meta": {
+    "status": "distilled_reference",
+    "official_brand_guidelines": false,
+    "default_new_deck_aspect_ratio": "16:9"
+  },
+  "mckinsey_informed": {
+    "reference_slide_size_pt": [960, 540],
+    "sample_slides": 3,
+    "fonts": {
+      "display": "Georgia",
+      "body": "Arial"
+    },
+    "colors": {
+      "white": "#FFFFFF",
+      "black": "#000000",
+      "deep_navy": "#051C2C",
+      "bright_blue": "#00A9F4",
+      "teal": "#19D3C5",
+      "light_grey": "#E6E6E6"
+    },
+    "title": {
+      "alignment": "left",
+      "typical_size_pt": [25, 44],
+      "color": "#000000"
+    },
+    "body": {
+      "typical_size_pt": [9, 16],
+      "color": "#000000"
+    },
+    "chrome": "minimal",
+    "density": "low-to-medium",
+    "emphasis": "headline plus one blue or teal proof"
+  },
+  "bain_informed": {
+    "reference_slide_size_pt": [815.75, 568.75],
+    "sample_slides": 229,
+    "fonts": {
+      "display": "Verdana",
+      "body": "Verdana",
+      "imported_chart_fallback": "Arial"
+    },
+    "colors": {
+      "white": "#FFFFFF",
+      "black": "#000000",
+      "red": "#CC0000",
+      "dark_grey": "#777777",
+      "mid_grey": "#B2B2B2",
+      "light_grey": "#DDDDDD",
+      "blue": "#006393",
+      "cyan": "#0091BF",
+      "teal": "#61A48D",
+      "olive": "#738C1F",
+      "gold": "#D7A154"
+    },
+    "title": {
+      "alignment": "left",
+      "typical_size_pt": [24, 28],
+      "color": "#000000"
+    },
+    "body": {
+      "typical_size_pt": [9, 14],
+      "color": "#000000"
+    },
+    "chrome": "thin red top rule",
+    "density": "high",
+    "emphasis": "one red answer, gap, risk, or selected scenario"
+  },
+  "bcg_informed": {
+    "reference_slide_size_pt": [780, 540],
+    "sample_slides": 65,
+    "fonts": {
+      "display": "Arial",
+      "body": "Arial"
+    },
+    "colors": {
+      "white": "#FFFFFF",
+      "black": "#000000",
+      "green": "#177B57",
+      "soft_green": "#5BAD82",
+      "pale_green": "#BCDEC2",
+      "blue_grey": "#79A2B3",
+      "light_grey": "#E2E2E2",
+      "orange": "#DC6E00",
+      "red": "#C41300",
+      "yellow": "#E7D475",
+      "gold": "#DCC05A"
+    },
+    "title": {
+      "alignment": "left",
+      "typical_size_pt": [22, 26],
+      "color": "#177B57"
+    },
+    "body": {
+      "typical_size_pt": [9, 16],
+      "color": "#000000"
+    },
+    "chrome": "thin green top rule",
+    "density": "medium-to-high",
+    "emphasis": "green selected path, header, or bottom takeaway strip"
+  }
+}
