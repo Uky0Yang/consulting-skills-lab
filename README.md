@@ -2,7 +2,7 @@
 
 Reusable Codex-style consulting skills for strategy, transformation, diligence, executive communication, interviews, and presentation design.
 
-This repository packages practical consulting workflows as portable skill folders. The current release covers scaling agentic AI beyond pilots, mapping markets from messy signals, running rapid commercial due diligence, turning analysis into executive decision memos, coaching case interviews, and formatting analytical slides.
+This repository packages practical consulting workflows as portable skill folders. The current release covers scaling agentic AI beyond pilots, mapping markets from messy signals, running rapid commercial due diligence, turning analysis into executive decision memos, building accountable 100-day value plans, coaching case interviews, and formatting analytical slides.
 
 ## Who this is for
 
@@ -18,6 +18,7 @@ This repository packages practical consulting workflows as portable skill folder
 | `market-map-signal-scan` | Market analysis, competitive landscape, trend scan, opportunity gap assessment, category entry | Market map, signal register, opportunity gap matrix, decision gate |
 | `commercial-due-diligence-sprint` | Market scan, target assessment, investment memo, value creation thesis | Diligence issue tree, evidence plan, IC-ready synthesis |
 | `executive-decision-memo` | Board memo, CEO update, steering committee note, decision recommendation | Concise recommendation memo with options, risks, and next actions |
+| `value-creation-plan` | Post-diligence 100-day plans, synergy plans, strategic execution, benefit tracking | Owned initiative portfolio, value bridge, and 100-day roadmap |
 | `consulting-case-interview-coach` | Mock cases, case math, interviewer-style feedback, practice planning | Interactive interview, anchored scorecard, targeted drill |
 | `consulting-template-style` | Consulting decks, chart books, slide redesign, executive presentation formatting | MBB-informed style selection, layout map, formatting and QA rules |
 
@@ -30,6 +31,7 @@ Copy-Item -Recurse .\skills\agentic-ai-transformation-office "$env:USERPROFILE\.
 Copy-Item -Recurse .\skills\market-map-signal-scan "$env:USERPROFILE\.codex\skills\"
 Copy-Item -Recurse .\skills\commercial-due-diligence-sprint "$env:USERPROFILE\.codex\skills\"
 Copy-Item -Recurse .\skills\executive-decision-memo "$env:USERPROFILE\.codex\skills\"
+Copy-Item -Recurse .\skills\value-creation-plan "$env:USERPROFILE\.codex\skills\"
 Copy-Item -Recurse .\skills\consulting-case-interview-coach "$env:USERPROFILE\.codex\skills\"
 Copy-Item -Recurse .\skills\consulting-template-style "$env:USERPROFILE\.codex\skills\"
 ```
@@ -46,6 +48,10 @@ Use $market-map-signal-scan to analyze the market for AI meeting assistants and 
 
 ```text
 Use $consulting-case-interview-coach to run a hard candidate-led case and score my performance.
+```
+
+```text
+Use $value-creation-plan to turn this investment thesis into a finance-validated 100-day value creation plan.
 ```
 
 ```text

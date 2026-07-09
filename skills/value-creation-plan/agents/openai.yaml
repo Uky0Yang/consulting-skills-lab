@@ -1,0 +1,4 @@
+interface:
+  display_name: "Value Creation Plan"
+  short_description: "Turn a thesis into an owned 100-day value plan"
+  default_prompt: "Use $value-creation-plan to convert this diligence thesis into an accountable 100-day value creation plan."
