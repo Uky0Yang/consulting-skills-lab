@@ -1,0 +1,4 @@
+interface:
+  display_name: "Market Sizing Sanity Check"
+  short_description: "Triangulate market size and expose weak assumptions"
+  default_prompt: "Use $market-sizing-sanity-check to build and stress-test a decision-ready market size estimate."

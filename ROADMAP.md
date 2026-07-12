@@ -21,10 +21,14 @@
 - Add `value-creation-plan` for post-diligence and transformation 100-day plans, financial bridges, initiative ownership, and benefit tracking.
 - Add repository regression tests and run them in GitHub Actions.
 
+## v0.4
+
+- Add `market-sizing-sanity-check` with independent triangulation, unit auditing, reconciliation, scenario design, and a complete worked example.
+- Add a machine-readable skill catalog and validate that it stays synchronized with skill folders.
+
 ## Near Term
 
 - Add example prompts and sample outputs for each skill.
-- Add a machine-readable skill catalog.
 - Add a packaging script for copying selected skills into a local Codex skills directory.
 - Add more original cases for healthcare, pricing, private equity, and operations.
 - Add a machine-readable index for original cases by type, industry, geography, and difficulty.

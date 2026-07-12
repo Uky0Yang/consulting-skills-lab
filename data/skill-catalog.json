@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "skills": [
+    {"name": "agentic-ai-transformation-office", "category": "transformation", "primary_output": "Transformation office plan and 30/60/90 roadmap"},
+    {"name": "commercial-due-diligence-sprint", "category": "diligence", "primary_output": "Diligence issue tree and IC-ready synthesis"},
+    {"name": "consulting-case-interview-coach", "category": "capability-building", "primary_output": "Interactive case and anchored scorecard"},
+    {"name": "consulting-template-style", "category": "communication", "primary_output": "Slide style, layout, and QA rules"},
+    {"name": "executive-decision-memo", "category": "communication", "primary_output": "Decision memo with options, risks, and actions"},
+    {"name": "market-map-signal-scan", "category": "strategy", "primary_output": "Market map and opportunity gap matrix"},
+    {"name": "market-sizing-sanity-check", "category": "strategy", "primary_output": "Triangulated market range and sensitivity audit"},
+    {"name": "value-creation-plan", "category": "execution", "primary_output": "Owned initiative portfolio and 100-day plan"}
+  ]
+}

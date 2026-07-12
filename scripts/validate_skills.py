@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import re
 import sys
 from pathlib import Path
@@ -7,6 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SKILLS_DIR = ROOT / "skills"
+CATALOG_PATH = ROOT / "data" / "skill-catalog.json"
 
 NAME_RE = re.compile(r"^[a-z0-9][a-z0-9-]{0,63}$")
 SECRET_PATTERNS = [
@@ -105,8 +107,55 @@ def validate_secrets(errors: list[str]) -> None:
                 fail(errors, path, f"possible secret pattern: {label}")
 
 
+def validate_catalog(skill_dirs: list[Path], errors: list[str]) -> None:
+    if not CATALOG_PATH.exists():
+        fail(errors, CATALOG_PATH, "missing machine-readable skill catalog")
+        return
+
+    try:
+        catalog = json.loads(CATALOG_PATH.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, UnicodeDecodeError) as exc:
+        fail(errors, CATALOG_PATH, f"invalid JSON: {exc}")
+        return
+
+    if catalog.get("schema_version") != 1:
+        fail(errors, CATALOG_PATH, "schema_version must be 1")
+
+    entries = catalog.get("skills")
+    if not isinstance(entries, list):
+        fail(errors, CATALOG_PATH, "skills must be a list")
+        return
+
+    catalog_names: list[str] = []
+    for index, entry in enumerate(entries):
+        if not isinstance(entry, dict):
+            fail(errors, CATALOG_PATH, f"skills[{index}] must be an object")
+            continue
+        name = entry.get("name")
+        category = entry.get("category")
+        primary_output = entry.get("primary_output")
+        if not isinstance(name, str) or not NAME_RE.match(name):
+            fail(errors, CATALOG_PATH, f"skills[{index}].name is invalid")
+            continue
+        catalog_names.append(name)
+        if not isinstance(category, str) or not category.strip():
+            fail(errors, CATALOG_PATH, f"{name}: category is required")
+        if not isinstance(primary_output, str) or len(primary_output.strip()) < 20:
+            fail(errors, CATALOG_PATH, f"{name}: primary_output must be descriptive")
+
+    if len(catalog_names) != len(set(catalog_names)):
+        fail(errors, CATALOG_PATH, "contains duplicate skill names")
+
+    folder_names = {path.name for path in skill_dirs}
+    if set(catalog_names) != folder_names:
+        missing = sorted(folder_names - set(catalog_names))
+        extra = sorted(set(catalog_names) - folder_names)
+        fail(errors, CATALOG_PATH, f"catalog mismatch; missing={missing}, extra={extra}")
+
+
 def main() -> int:
     errors: list[str] = []
+    skill_dirs: list[Path] = []
     if not SKILLS_DIR.exists():
         fail(errors, SKILLS_DIR, "missing skills directory")
     else:
@@ -116,6 +165,7 @@ def main() -> int:
         for skill_dir in skill_dirs:
             validate_skill(skill_dir, errors)
 
+    validate_catalog(skill_dirs, errors)
     validate_secrets(errors)
 
     if errors:

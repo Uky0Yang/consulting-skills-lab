@@ -2,7 +2,7 @@
 
 Reusable Codex-style consulting skills for strategy, transformation, diligence, executive communication, interviews, and presentation design.
 
-This repository packages practical consulting workflows as portable skill folders. The current release covers scaling agentic AI beyond pilots, mapping markets from messy signals, running rapid commercial due diligence, turning analysis into executive decision memos, building accountable 100-day value plans, coaching case interviews, and formatting analytical slides.
+This repository packages practical consulting workflows as portable skill folders. The current release covers scaling agentic AI beyond pilots, mapping markets from messy signals, triangulating market size, running rapid commercial due diligence, turning analysis into executive decision memos, building accountable 100-day value plans, coaching case interviews, and formatting analytical slides.
 
 ## Who this is for
 
@@ -16,6 +16,7 @@ This repository packages practical consulting workflows as portable skill folder
 | --- | --- | --- |
 | `agentic-ai-transformation-office` | AI transformation, agentic AI scaling, pilot-to-value diagnosis, workflow redesign, governance | Transformation office plan, portfolio scoring, 30/60/90 roadmap |
 | `market-map-signal-scan` | Market analysis, competitive landscape, trend scan, opportunity gap assessment, category entry | Market map, signal register, opportunity gap matrix, decision gate |
+| `market-sizing-sanity-check` | TAM/SAM/SOM, demand sizing, market-entry economics, capacity and growth sanity checks | Triangulated range, driver tree, reconciliation, decision sensitivity |
 | `commercial-due-diligence-sprint` | Market scan, target assessment, investment memo, value creation thesis | Diligence issue tree, evidence plan, IC-ready synthesis |
 | `executive-decision-memo` | Board memo, CEO update, steering committee note, decision recommendation | Concise recommendation memo with options, risks, and next actions |
 | `value-creation-plan` | Post-diligence 100-day plans, synergy plans, strategic execution, benefit tracking | Owned initiative portfolio, value bridge, and 100-day roadmap |
@@ -29,6 +30,7 @@ Copy the skill folders you want into your local Codex skills directory:
 ```powershell
 Copy-Item -Recurse .\skills\agentic-ai-transformation-office "$env:USERPROFILE\.codex\skills\"
 Copy-Item -Recurse .\skills\market-map-signal-scan "$env:USERPROFILE\.codex\skills\"
+Copy-Item -Recurse .\skills\market-sizing-sanity-check "$env:USERPROFILE\.codex\skills\"
 Copy-Item -Recurse .\skills\commercial-due-diligence-sprint "$env:USERPROFILE\.codex\skills\"
 Copy-Item -Recurse .\skills\executive-decision-memo "$env:USERPROFILE\.codex\skills\"
 Copy-Item -Recurse .\skills\value-creation-plan "$env:USERPROFILE\.codex\skills\"
@@ -44,6 +46,10 @@ Use $agentic-ai-transformation-office to diagnose why our AI pilots are not scal
 
 ```text
 Use $market-map-signal-scan to analyze the market for AI meeting assistants and identify credible opportunity gaps.
+```
+
+```text
+Use $market-sizing-sanity-check to triangulate this market estimate and identify which assumptions could change the entry decision.
 ```
 
 ```text
@@ -83,6 +89,8 @@ If you have the local Codex skill creator installed, you can also run its quick 
 The AI transformation skill references public 2025-2026 signals from McKinsey, BCG, Bain, and industry reporting about AI value realization, agentic AI adoption, and organizational barriers to scaling. These references are used as context, not as proprietary methodology.
 
 The case-interview coach includes an official-source guide checked in July 2026. It links to current firm and consulting-club resources while keeping copyrighted casebooks out of the repository.
+
+The repository also exposes a machine-readable catalog at [`data/skill-catalog.json`](data/skill-catalog.json) so installers and documentation tools can discover the available skills without parsing the README.
 
 ## Contributing
 
