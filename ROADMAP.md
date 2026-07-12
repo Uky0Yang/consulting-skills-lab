@@ -26,17 +26,21 @@
 - Add `market-sizing-sanity-check` with independent triangulation, unit auditing, reconciliation, scenario design, and a complete worked example.
 - Add a machine-readable skill catalog and validate that it stays synchronized with skill folders.
 
+## v1.0
+
+- Add realistic worked examples and rubric-based evaluation scenarios for every skill.
+- Add a safe cross-platform installer for selected or all skills.
+- Add deterministic release archives and SHA-256 checksums.
+- Validate internal links, reference routing, catalog integrity, metadata, examples, and evaluation coverage.
+- Test the repository across Linux and Windows on supported Python versions.
+
 ## Near Term
 
-- Add example prompts and sample outputs for each skill.
-- Add a packaging script for copying selected skills into a local Codex skills directory.
 - Add more original cases for healthcare, pricing, private equity, and operations.
 - Add a machine-readable index for original cases by type, industry, geography, and difficulty.
 - Add original, brand-neutral slide examples generated from the consulting layout catalog.
 
 ## Later
 
-- Add tests for reference-file link integrity.
-- Add release packaging.
 - Add generated documentation site.
 - Add community skill review checklist.

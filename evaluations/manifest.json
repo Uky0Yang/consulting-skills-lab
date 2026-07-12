@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "scoring": {
+    "scale": "0-2 per rubric item",
+    "pass_rule": "At least 75% of available points and no critical guardrail violation"
+  },
+  "skills": [
+    {
+      "skill": "agentic-ai-transformation-office",
+      "scenarios": [
+        {
+          "id": "ato-pilot-reset",
+          "prompt": "Diagnose why 14 enterprise AI pilots have produced no measurable value and propose a 90-day reset.",
+          "rubric": ["Separates value, workflow, controls, and adoption causes", "Prioritizes a focused portfolio with owners", "Defines operational and risk gates"]
+        },
+        {
+          "id": "ato-high-risk-agent",
+          "prompt": "Design the operating model for an agent that drafts and submits insurance claims decisions.",
+          "rubric": ["Distinguishes assistance from irreversible decisions", "Defines human validation, permissions, logs, and escalation", "Links deployment to quality and risk outcomes"]
+        }
+      ]
+    },
+    {
+      "skill": "commercial-due-diligence-sprint",
+      "scenarios": [
+        {
+          "id": "cdd-vertical-saas",
+          "prompt": "Frame a ten-day diligence of a vertical SaaS target whose growth thesis depends on multi-site expansion.",
+          "rubric": ["Starts with decision-changing hypotheses", "Separates available, missing, and management-supplied evidence", "Defines kill criteria and valuation implications"]
+        },
+        {
+          "id": "cdd-consumer-health",
+          "prompt": "Assess a consumer health subscription business with high reported retention but heavy annual prepayment.",
+          "rubric": ["Tests cohort and cash-timing definitions", "Includes customer, channel, regulatory, and concentration risks", "Produces a focused evidence plan"]
+        }
+      ]
+    },
+    {
+      "skill": "consulting-case-interview-coach",
+      "scenarios": [
+        {
+          "id": "case-profitability",
+          "prompt": "Run a hard candidate-led profitability case without revealing data before it is requested.",
+          "rubric": ["Controls information disclosure", "Challenges structure, math, and synthesis interactively", "Scores only observed behavior with a targeted drill"]
+        },
+        {
+          "id": "case-public-sector",
+          "prompt": "Run an interviewer-led public-sector prioritization case with quantitative tradeoffs.",
+          "rubric": ["Uses an original, internally consistent case", "Tests quantitative and qualitative judgment", "Distinguishes public value from profit"]
+        }
+      ]
+    },
+    {
+      "skill": "consulting-template-style",
+      "scenarios": [
+        {
+          "id": "style-ic-deck",
+          "prompt": "Redesign a five-slide market-entry deck for an investment committee in a restrained style.",
+          "rubric": ["Builds a coherent answer-led page map", "Defines usable typography, grid, color, and chart rules", "Includes legibility, source, and consistency QA"]
+        },
+        {
+          "id": "style-dense-chartbook",
+          "prompt": "Standardize a dense 30-page operational chart book without losing analytical detail.",
+          "rubric": ["Selects a style appropriate to repeated evidence pages", "Creates reusable layout and hierarchy rules", "Avoids decorative frameworks and proprietary imitation"]
+        }
+      ]
+    },
+    {
+      "skill": "executive-decision-memo",
+      "scenarios": [
+        {
+          "id": "memo-vendor-renewal",
+          "prompt": "Recommend whether to renew an incumbent automation vendor or run a competitive process.",
+          "rubric": ["States the decision and recommendation immediately", "Compares real alternatives on decision criteria", "Pairs risks with mitigation and revisit triggers"]
+        },
+        {
+          "id": "memo-investment-gate",
+          "prompt": "Turn conflicting pilot evidence into a board decision on whether to fund a national rollout.",
+          "rubric": ["Separates facts, assumptions, and evidence confidence", "Makes the tradeoff and no-decision consequence visible", "Defines owners, timing, and the next gate"]
+        }
+      ]
+    },
+    {
+      "skill": "market-map-signal-scan",
+      "scenarios": [
+        {
+          "id": "map-contact-center-qa",
+          "prompt": "Assess the opportunity for AI quality assurance in UK and German contact centers.",
+          "rubric": ["Segments by buyer job and includes substitutes", "Triangulates independent signal types", "Expresses opportunity gaps as falsifiable theses"]
+        },
+        {
+          "id": "map-climate-software",
+          "prompt": "Map the European supplier climate-risk software market and identify credible entry wedges.",
+          "rubric": ["Separates visibility from adoption evidence", "Includes regulation, data, channels, and gatekeepers", "Labels claim confidence and next tests"]
+        }
+      ]
+    },
+    {
+      "skill": "market-sizing-sanity-check",
+      "scenarios": [
+        {
+          "id": "size-compliance-software",
+          "prompt": "Audit a £50m UK compliance software market claim and test whether £4m entrant revenue is credible.",
+          "rubric": ["Defines scope, metric, period, and units", "Uses an independent cross-check and reconciles differences", "Tests an obtainable-market decision threshold"]
+        },
+        {
+          "id": "size-recycling-capacity",
+          "prompt": "Size the year-five serviceable battery recycling volume for a capacity investment.",
+          "rubric": ["Separates feedstock, demand, capacity, yield, and utilization", "Uses coherent low/base/high scenarios", "Calculates a break-even utilization or supply threshold"]
+        }
+      ]
+    },
+    {
+      "skill": "value-creation-plan",
+      "scenarios": [
+        {
+          "id": "vcp-distributor",
+          "prompt": "Turn pricing, procurement, and cross-sell theses into a finance-valid 100-day plan.",
+          "rubric": ["Separates potential, underwritten, and realized value", "Assigns one owner, milestones, dependencies, and red flags", "Shows gross benefits, costs, and net value without double counting"]
+        },
+        {
+          "id": "vcp-synergy",
+          "prompt": "Create a merger synergy plan across procurement, footprint, and revenue initiatives.",
+          "rubric": ["Defines a reconciled baseline and timing", "Makes interdependencies and disbenefits explicit", "Uses finance validation and escalation cadence"]
+        }
+      ]
+    }
+  ]
+}

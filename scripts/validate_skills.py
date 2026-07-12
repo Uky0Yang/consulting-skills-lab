@@ -4,13 +4,16 @@ import json
 import re
 import sys
 from pathlib import Path
+from urllib.parse import unquote
 
 
 ROOT = Path(__file__).resolve().parents[1]
 SKILLS_DIR = ROOT / "skills"
 CATALOG_PATH = ROOT / "data" / "skill-catalog.json"
+EVALUATIONS_PATH = ROOT / "evaluations" / "manifest.json"
 
 NAME_RE = re.compile(r"^[a-z0-9][a-z0-9-]{0,63}$")
+MARKDOWN_LINK_RE = re.compile(r"(?<!!)\[[^\]]*\]\(([^)]+)\)")
 SECRET_PATTERNS = [
     ("GitHub OAuth token", re.compile(r"gho_[A-Za-z0-9_]{20,}")),
     ("GitHub personal access token", re.compile(r"ghp_[A-Za-z0-9_]{20,}")),
@@ -65,6 +68,9 @@ def validate_skill(skill_dir: Path, errors: list[str]) -> None:
     name = frontmatter.get("name", "")
     description = frontmatter.get("description", "")
 
+    if set(frontmatter) != {"name", "description"}:
+        fail(errors, skill_md, "frontmatter must contain only name and description")
+
     if name != skill_dir.name:
         fail(errors, skill_md, f"name must match directory name ({skill_dir.name})")
     if not NAME_RE.match(name):
@@ -89,6 +95,33 @@ def validate_skill(skill_dir: Path, errors: list[str]) -> None:
     for ref in sorted(set(re.findall(r"`(references/[^`]+)`", text))):
         if not (skill_dir / ref).exists():
             fail(errors, skill_md, f"referenced file does not exist: {ref}")
+
+    validate_reference_routing(skill_dir, errors)
+
+
+def validate_reference_routing(skill_dir: Path, errors: list[str]) -> None:
+    references_dir = skill_dir / "references"
+    if not references_dir.exists():
+        return
+    skill_md = skill_dir / "SKILL.md"
+    skill_text = skill_md.read_text(encoding="utf-8")
+    for reference in sorted(path for path in references_dir.rglob("*") if path.is_file()):
+        relative = reference.relative_to(skill_dir).as_posix()
+        if f"`{relative}`" not in skill_text:
+            fail(errors, reference, "reference is not routed from SKILL.md")
+
+
+def validate_markdown_links(path: Path, errors: list[str]) -> None:
+    text = path.read_text(encoding="utf-8")
+    for raw_target in MARKDOWN_LINK_RE.findall(text):
+        target = raw_target.strip().split(maxsplit=1)[0].strip("<>")
+        if target.startswith(("http://", "https://", "mailto:", "#")):
+            continue
+        target_path = unquote(target.split("#", 1)[0])
+        if not target_path:
+            continue
+        if not (path.parent / target_path).resolve().exists():
+            fail(errors, path, f"broken internal link: {target}")
 
 
 def validate_secrets(errors: list[str]) -> None:
@@ -118,8 +151,10 @@ def validate_catalog(skill_dirs: list[Path], errors: list[str]) -> None:
         fail(errors, CATALOG_PATH, f"invalid JSON: {exc}")
         return
 
-    if catalog.get("schema_version") != 1:
-        fail(errors, CATALOG_PATH, "schema_version must be 1")
+    if catalog.get("schema_version") != 2:
+        fail(errors, CATALOG_PATH, "schema_version must be 2")
+    if catalog.get("project_version") != "1.0.0":
+        fail(errors, CATALOG_PATH, "project_version must match the v1 release")
 
     entries = catalog.get("skills")
     if not isinstance(entries, list):
@@ -133,15 +168,27 @@ def validate_catalog(skill_dirs: list[Path], errors: list[str]) -> None:
             continue
         name = entry.get("name")
         category = entry.get("category")
+        description = entry.get("description")
         primary_output = entry.get("primary_output")
+        skill_path = entry.get("path")
+        example = entry.get("example")
+        tags = entry.get("tags")
         if not isinstance(name, str) or not NAME_RE.match(name):
             fail(errors, CATALOG_PATH, f"skills[{index}].name is invalid")
             continue
         catalog_names.append(name)
         if not isinstance(category, str) or not category.strip():
             fail(errors, CATALOG_PATH, f"{name}: category is required")
+        if not isinstance(description, str) or len(description.strip()) < 60:
+            fail(errors, CATALOG_PATH, f"{name}: description must be specific")
         if not isinstance(primary_output, str) or len(primary_output.strip()) < 20:
             fail(errors, CATALOG_PATH, f"{name}: primary_output must be descriptive")
+        if skill_path != f"skills/{name}" or not (ROOT / str(skill_path)).is_dir():
+            fail(errors, CATALOG_PATH, f"{name}: path is invalid")
+        if not isinstance(example, str) or not (ROOT / example).is_file():
+            fail(errors, CATALOG_PATH, f"{name}: example is missing")
+        if not isinstance(tags, list) or len(tags) < 3 or not all(isinstance(tag, str) for tag in tags):
+            fail(errors, CATALOG_PATH, f"{name}: at least three tags are required")
 
     if len(catalog_names) != len(set(catalog_names)):
         fail(errors, CATALOG_PATH, "contains duplicate skill names")
@@ -151,6 +198,52 @@ def validate_catalog(skill_dirs: list[Path], errors: list[str]) -> None:
         missing = sorted(folder_names - set(catalog_names))
         extra = sorted(set(catalog_names) - folder_names)
         fail(errors, CATALOG_PATH, f"catalog mismatch; missing={missing}, extra={extra}")
+
+
+def validate_evaluations(skill_dirs: list[Path], errors: list[str]) -> None:
+    if not EVALUATIONS_PATH.exists():
+        fail(errors, EVALUATIONS_PATH, "missing evaluation manifest")
+        return
+    try:
+        manifest = json.loads(EVALUATIONS_PATH.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, UnicodeDecodeError) as exc:
+        fail(errors, EVALUATIONS_PATH, f"invalid JSON: {exc}")
+        return
+
+    entries = manifest.get("skills")
+    if not isinstance(entries, list):
+        fail(errors, EVALUATIONS_PATH, "skills must be a list")
+        return
+    expected_names = {path.name for path in skill_dirs}
+    actual_names = {entry.get("skill") for entry in entries if isinstance(entry, dict)}
+    if actual_names != expected_names:
+        fail(errors, EVALUATIONS_PATH, "evaluation skills must match skill folders")
+    for entry in entries:
+        if not isinstance(entry, dict):
+            continue
+        name = entry.get("skill", "unknown")
+        scenarios = entry.get("scenarios")
+        if not isinstance(scenarios, list) or len(scenarios) < 2:
+            fail(errors, EVALUATIONS_PATH, f"{name}: at least two scenarios are required")
+            continue
+        ids: list[str] = []
+        for scenario in scenarios:
+            if not isinstance(scenario, dict):
+                fail(errors, EVALUATIONS_PATH, f"{name}: scenario must be an object")
+                continue
+            scenario_id = scenario.get("id")
+            prompt = scenario.get("prompt")
+            rubric = scenario.get("rubric")
+            if not isinstance(scenario_id, str) or not scenario_id:
+                fail(errors, EVALUATIONS_PATH, f"{name}: scenario id is required")
+            else:
+                ids.append(scenario_id)
+            if not isinstance(prompt, str) or len(prompt) < 40:
+                fail(errors, EVALUATIONS_PATH, f"{name}:{scenario_id}: prompt is too short")
+            if not isinstance(rubric, list) or len(rubric) < 3:
+                fail(errors, EVALUATIONS_PATH, f"{name}:{scenario_id}: at least three rubric items are required")
+        if len(ids) != len(set(ids)):
+            fail(errors, EVALUATIONS_PATH, f"{name}: duplicate scenario ids")
 
 
 def main() -> int:
@@ -166,6 +259,10 @@ def main() -> int:
             validate_skill(skill_dir, errors)
 
     validate_catalog(skill_dirs, errors)
+    validate_evaluations(skill_dirs, errors)
+    for markdown_path in sorted(ROOT.rglob("*.md")):
+        if ".git" not in markdown_path.parts:
+            validate_markdown_links(markdown_path, errors)
     validate_secrets(errors)
 
     if errors:
