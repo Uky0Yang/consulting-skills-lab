@@ -1,0 +1,22 @@
+version: "1.0.0"
+requirements:
+  - id: V1-001
+    description: Every catalogued skill has a realistic worked example.
+    test: unit
+    code: done
+  - id: V1-002
+    description: Every catalogued skill has at least two evaluation scenarios with an explicit rubric.
+    test: unit
+    code: done
+  - id: V1-003
+    description: Users can list and install selected or all skills with a cross-platform Python CLI.
+    test: unit
+    code: done
+  - id: V1-004
+    description: Maintainers can build deterministic release archives and a SHA-256 manifest.
+    test: unit
+    code: done
+  - id: V1-005
+    description: Repository validation detects catalog drift, broken internal links, stale examples, and incomplete evaluation coverage.
+    test: unit
+    code: done

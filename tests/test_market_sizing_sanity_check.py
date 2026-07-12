@@ -40,4 +40,4 @@ class TestMarketSizingSanityCheck(unittest.TestCase):
         """REQ-MSS-005: Visitors can discover the skill from the landing page."""
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
 
-        self.assertIn("| `market-sizing-sanity-check` |", readme)
+        self.assertIn("skills/market-sizing-sanity-check/SKILL.md", readme)

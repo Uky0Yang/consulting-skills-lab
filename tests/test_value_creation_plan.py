@@ -35,4 +35,4 @@ class TestValueCreationPlan(unittest.TestCase):
         """REQ-VCP-005: Visitors can discover the new skill from the repository landing page."""
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
 
-        self.assertIn("| `value-creation-plan` |", readme)
+        self.assertIn("skills/value-creation-plan/SKILL.md", readme)

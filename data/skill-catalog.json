@@ -1,13 +1,78 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
+  "project_version": "1.0.0",
   "skills": [
-    {"name": "agentic-ai-transformation-office", "category": "transformation", "primary_output": "Transformation office plan and 30/60/90 roadmap"},
-    {"name": "commercial-due-diligence-sprint", "category": "diligence", "primary_output": "Diligence issue tree and IC-ready synthesis"},
-    {"name": "consulting-case-interview-coach", "category": "capability-building", "primary_output": "Interactive case and anchored scorecard"},
-    {"name": "consulting-template-style", "category": "communication", "primary_output": "Slide style, layout, and QA rules"},
-    {"name": "executive-decision-memo", "category": "communication", "primary_output": "Decision memo with options, risks, and actions"},
-    {"name": "market-map-signal-scan", "category": "strategy", "primary_output": "Market map and opportunity gap matrix"},
-    {"name": "market-sizing-sanity-check", "category": "strategy", "primary_output": "Triangulated market range and sensitivity audit"},
-    {"name": "value-creation-plan", "category": "execution", "primary_output": "Owned initiative portfolio and 100-day plan"}
+    {
+      "name": "agentic-ai-transformation-office",
+      "path": "skills/agentic-ai-transformation-office",
+      "category": "transformation",
+      "description": "Move AI initiatives from disconnected pilots to owned workflows, controls, adoption routines, and measurable value.",
+      "primary_output": "Transformation office plan and 30/60/90 roadmap",
+      "example": "examples/agentic-ai-transformation-office.md",
+      "tags": ["agentic-ai", "operating-model", "governance", "transformation"]
+    },
+    {
+      "name": "commercial-due-diligence-sprint",
+      "path": "skills/commercial-due-diligence-sprint",
+      "category": "diligence",
+      "description": "Turn an investment question into a focused commercial diligence sprint with hypotheses, evidence standards, and kill criteria.",
+      "primary_output": "Diligence issue tree and IC-ready synthesis",
+      "example": "examples/commercial-due-diligence-sprint.md",
+      "tags": ["commercial-due-diligence", "private-equity", "investment", "market"]
+    },
+    {
+      "name": "consulting-case-interview-coach",
+      "path": "skills/consulting-case-interview-coach",
+      "category": "capability-building",
+      "description": "Run interviewer- or candidate-led consulting cases with controlled disclosure, anchored scoring, and targeted coaching.",
+      "primary_output": "Interactive case and anchored scorecard",
+      "example": "examples/consulting-case-interview-coach.md",
+      "tags": ["case-interview", "coaching", "consulting", "practice"]
+    },
+    {
+      "name": "consulting-template-style",
+      "path": "skills/consulting-template-style",
+      "category": "communication",
+      "description": "Apply brand-neutral consulting slide grammar, layout selection, hierarchy, chart styling, and presentation QA.",
+      "primary_output": "Slide style, layout, and QA rules",
+      "example": "examples/consulting-template-style.md",
+      "tags": ["presentations", "slides", "visual-design", "consulting"]
+    },
+    {
+      "name": "executive-decision-memo",
+      "path": "skills/executive-decision-memo",
+      "category": "communication",
+      "description": "Convert analysis into a concise executive recommendation with real options, tradeoffs, risks, and owned next actions.",
+      "primary_output": "Decision memo with options, risks, and actions",
+      "example": "examples/executive-decision-memo.md",
+      "tags": ["executive-communication", "decision-making", "board", "memo"]
+    },
+    {
+      "name": "market-map-signal-scan",
+      "path": "skills/market-map-signal-scan",
+      "category": "strategy",
+      "description": "Triangulate demand, supply, behavior, and constraint signals into a decision-ready market map and opportunity thesis.",
+      "primary_output": "Market map and opportunity gap matrix",
+      "example": "examples/market-map-signal-scan.md",
+      "tags": ["market-research", "competitive-analysis", "strategy", "signals"]
+    },
+    {
+      "name": "market-sizing-sanity-check",
+      "path": "skills/market-sizing-sanity-check",
+      "category": "strategy",
+      "description": "Build and reconcile independent market estimates, audit units, expose uncertainty, and test decision thresholds.",
+      "primary_output": "Triangulated market range and sensitivity audit",
+      "example": "examples/market-sizing-sanity-check.md",
+      "tags": ["market-sizing", "tam", "strategy", "forecasting"]
+    },
+    {
+      "name": "value-creation-plan",
+      "path": "skills/value-creation-plan",
+      "category": "execution",
+      "description": "Translate a strategic or investment thesis into a finance-valid, owned initiative portfolio and 100-day execution plan.",
+      "primary_output": "Owned initiative portfolio and 100-day plan",
+      "example": "examples/value-creation-plan.md",
+      "tags": ["value-creation", "100-day-plan", "execution", "private-equity"]
+    }
   ]
 }

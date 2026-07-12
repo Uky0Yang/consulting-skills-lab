@@ -1,5 +1,9 @@
 # Consulting Skills Lab
 
+[![Validate](https://github.com/Uky0Yang/consulting-skills-lab/actions/workflows/validate.yml/badge.svg)](https://github.com/Uky0Yang/consulting-skills-lab/actions/workflows/validate.yml)
+[![Latest release](https://img.shields.io/github/v/release/Uky0Yang/consulting-skills-lab)](https://github.com/Uky0Yang/consulting-skills-lab/releases/latest)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 Reusable Codex-style consulting skills for strategy, transformation, diligence, executive communication, interviews, and presentation design.
 
 This repository packages practical consulting workflows as portable skill folders. The current release covers scaling agentic AI beyond pilots, mapping markets from messy signals, triangulating market size, running rapid commercial due diligence, turning analysis into executive decision memos, building accountable 100-day value plans, coaching case interviews, and formatting analytical slides.
@@ -12,18 +16,41 @@ This repository packages practical consulting workflows as portable skill folder
 
 ## Skills
 
-| Skill | Use it for | Main output |
+| Skill | Use it for | Example |
 | --- | --- | --- |
-| `agentic-ai-transformation-office` | AI transformation, agentic AI scaling, pilot-to-value diagnosis, workflow redesign, governance | Transformation office plan, portfolio scoring, 30/60/90 roadmap |
-| `market-map-signal-scan` | Market analysis, competitive landscape, trend scan, opportunity gap assessment, category entry | Market map, signal register, opportunity gap matrix, decision gate |
-| `market-sizing-sanity-check` | TAM/SAM/SOM, demand sizing, market-entry economics, capacity and growth sanity checks | Triangulated range, driver tree, reconciliation, decision sensitivity |
-| `commercial-due-diligence-sprint` | Market scan, target assessment, investment memo, value creation thesis | Diligence issue tree, evidence plan, IC-ready synthesis |
-| `executive-decision-memo` | Board memo, CEO update, steering committee note, decision recommendation | Concise recommendation memo with options, risks, and next actions |
-| `value-creation-plan` | Post-diligence 100-day plans, synergy plans, strategic execution, benefit tracking | Owned initiative portfolio, value bridge, and 100-day roadmap |
-| `consulting-case-interview-coach` | Mock cases, case math, interviewer-style feedback, practice planning | Interactive interview, anchored scorecard, targeted drill |
-| `consulting-template-style` | Consulting decks, chart books, slide redesign, executive presentation formatting | MBB-informed style selection, layout map, formatting and QA rules |
+| [`agentic-ai-transformation-office`](skills/agentic-ai-transformation-office/SKILL.md) | AI transformation, pilot-to-value diagnosis, workflow redesign, governance | [90-day pilot reset](examples/agentic-ai-transformation-office.md) |
+| [`market-map-signal-scan`](skills/market-map-signal-scan/SKILL.md) | Market analysis, competitive landscape, signal confidence, opportunity gaps | [Contact-center QA market](examples/market-map-signal-scan.md) |
+| [`market-sizing-sanity-check`](skills/market-sizing-sanity-check/SKILL.md) | TAM/SAM/SOM, demand sizing, capacity and growth sanity checks | [Compliance software sizing](examples/market-sizing-sanity-check.md) |
+| [`commercial-due-diligence-sprint`](skills/commercial-due-diligence-sprint/SKILL.md) | Target assessment, investment memo, growth and customer diligence | [Vertical SaaS diligence](examples/commercial-due-diligence-sprint.md) |
+| [`executive-decision-memo`](skills/executive-decision-memo/SKILL.md) | Board memo, steering note, decision recommendation | [Vendor renewal decision](examples/executive-decision-memo.md) |
+| [`value-creation-plan`](skills/value-creation-plan/SKILL.md) | 100-day plans, synergies, initiative ownership, benefits tracking | [Distributor value plan](examples/value-creation-plan.md) |
+| [`consulting-case-interview-coach`](skills/consulting-case-interview-coach/SKILL.md) | Mock cases, case math, anchored feedback, practice planning | [Profitability case](examples/consulting-case-interview-coach.md) |
+| [`consulting-template-style`](skills/consulting-template-style/SKILL.md) | Consulting decks, chart books, slide redesign, formatting QA | [Market-entry deck](examples/consulting-template-style.md) |
 
 ## Install
+
+List the available skills:
+
+```bash
+python scripts/install_skills.py --list
+```
+
+Install selected skills into the default Codex skills directory:
+
+```bash
+python scripts/install_skills.py --skills market-sizing-sanity-check value-creation-plan
+```
+
+Install all skills, or preview the operation first:
+
+```bash
+python scripts/install_skills.py --all
+python scripts/install_skills.py --all --dry-run
+```
+
+Use `--destination <path>` for a custom directory and `--force` to replace an existing selected skill. The installer validates every requested name before copying anything.
+
+### Manual installation
 
 Copy the skill folders you want into your local Codex skills directory:
 
@@ -70,9 +97,20 @@ Run the repository validator:
 
 ```bash
 python scripts/validate_skills.py
+python -m unittest discover -s tests -v
 ```
 
 If you have the local Codex skill creator installed, you can also run its quick validator against each skill folder.
+
+The repository includes two realistic evaluation scenarios per skill in [`evaluations/manifest.json`](evaluations/manifest.json). Each scenario defines observable rubric criteria and a pass rule for forward-testing skill behavior.
+
+## Release Packages
+
+Every tagged release contains one ZIP per skill, an all-skills bundle, and `SHA256SUMS.txt`. Maintainers can reproduce the artifacts locally:
+
+```bash
+python scripts/package_release.py --output dist --version 1.0.0
+```
 
 ## Design Principles
 
@@ -90,7 +128,7 @@ The AI transformation skill references public 2025-2026 signals from McKinsey, B
 
 The case-interview coach includes an official-source guide checked in July 2026. It links to current firm and consulting-club resources while keeping copyrighted casebooks out of the repository.
 
-The repository also exposes a machine-readable catalog at [`data/skill-catalog.json`](data/skill-catalog.json) so installers and documentation tools can discover the available skills without parsing the README.
+The repository also exposes a versioned machine-readable catalog at [`data/skill-catalog.json`](data/skill-catalog.json) so installers and documentation tools can discover skill paths, descriptions, examples, outputs, and tags without parsing the README.
 
 ## Contributing
 
@@ -103,6 +141,8 @@ New skills should include:
 - Reference files when the workflow depends on external context.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+
+Security and responsible disclosure guidance is in [SECURITY.md](SECURITY.md). Community participation is governed by [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
 
 ## License
 
