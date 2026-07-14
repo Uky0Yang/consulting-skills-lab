@@ -1,14 +1,14 @@
 # Security Policy
 
-## Supported versions
+## Supported Versions
 
-Security and privacy fixes are applied to the latest release and the `main` branch.
+Security fixes target the latest release and the `main` branch. Users of older releases should upgrade before requesting a fix.
 
-## Reporting a vulnerability
+## Reporting a Vulnerability
 
-Do not open a public issue for a suspected vulnerability, leaked credential, unsafe installation behavior, or exposure of private client information. Use GitHub's private vulnerability reporting for this repository when available, or contact the repository owner privately through their GitHub profile.
+Please do not open a public issue for a suspected vulnerability. Use the repository's **Security** tab and select **Report a vulnerability** to submit a private report.
 
-Include the affected file or release, reproduction steps, impact, and any suggested mitigation. Do not include real credentials, private client data, or harmful payloads in the report.
+Include the affected version, reproduction steps, expected impact, and any suggested remediation. Do not include real credentials or sensitive user data. We aim to acknowledge reports within seven days and will coordinate disclosure after a fix is available.
 
 ## Scope
 
@@ -16,7 +16,7 @@ Relevant reports include:
 
 - installer behavior that can overwrite files outside the selected destination;
 - release artifacts that differ from their published checksums;
-- committed credentials or private data;
+- committed credentials or private data; and
 - skill instructions that encourage unsafe disclosure, unauthorized actions, or bypassing professional review in regulated decisions.
 
 Consulting Skills Lab is an instruction and template library. Its outputs are analytical support and do not replace legal, financial, medical, security, or other qualified professional advice.
