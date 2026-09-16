@@ -10,6 +10,10 @@ This repository packages practical consulting workflows as portable skill folder
 
 ## Who this is for
 
+[![A brief becomes an options analysis and an accountable decision](docs/assets/decision-memo-walkthrough.svg)](examples/decision-memo-walkthrough.md)
+
+[30-second walkthrough: input → analysis → decision memo](examples/decision-memo-walkthrough.md). Fictional inputs are clearly labelled; this demonstrates the output structure, not a real client outcome.
+
 - Builders who want consulting-grade structure for ambiguous business problems.
 - Strategy, product, operations, and transformation teams using AI assistants.
 - Solo operators who need repeatable issue trees, memos, workplans, and risk registers.

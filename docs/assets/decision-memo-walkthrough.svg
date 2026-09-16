@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="480" viewBox="0 0 1280 480" role="img" aria-labelledby="title desc">
+<title id="title">From brief to decision memo</title><desc id="desc">Three panels show the brief, evidence-labelled options, and a conditional recommendation with owners. Fictional example.</desc>
+<rect width="1280" height="480" rx="18" fill="#f5f2e9"/>
+<g font-family="Arial, sans-serif" fill="#202820">
+<text x="44" y="55" font-size="18" letter-spacing="3">CONSULTING SKILLS LAB / WORKED EXAMPLE</text>
+<text x="44" y="105" font-size="36" font-weight="700">Turn the brief into a decision people can act on.</text>
+<g fill="#ffffff" stroke="#d6dbcf"><rect x="44" y="143" width="375" height="250" rx="10"/><rect x="451" y="143" width="375" height="250" rx="10"/><rect x="858" y="143" width="378" height="250" rx="10"/></g>
+<g fill="#406447" font-size="17" font-weight="700"><text x="65" y="180">01 / INPUT</text><text x="472" y="180">02 / ANALYSIS</text><text x="879" y="180">03 / DELIVERABLE</text></g>
+<g font-size="25" font-weight="700"><text x="65" y="228">Renew or compete?</text><text x="472" y="228">Three real options</text><text x="879" y="228">A conditional yes</text></g>
+<g font-size="19"><text x="65" y="275">3-year contract · 7% discount</text><text x="65" y="310">6-month competitive process</text><text x="65" y="345">Missing evidence made explicit</text><text x="472" y="275">Renew / compete / switch</text><text x="472" y="310">Separate facts from assumptions</text><text x="472" y="345">Check cost and transition risk</text><text x="879" y="275">Compete if extension is agreed</text><text x="879" y="310">Procurement / operations / finance</text><text x="879" y="345">Owners, dates, revisit trigger</text></g>
+<text x="44" y="445" font-size="17" fill="#596459">FICTIONAL SCENARIO · Structure demonstration, not validated client advice or savings</text>
+</g></svg>

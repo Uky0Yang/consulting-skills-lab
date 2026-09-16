@@ -1,5 +1,9 @@
 # Executive Decision Memo — Worked Example
 
+> Illustrative scenario, not client work or a verified recommendation. All financial figures, dates and operating assumptions below are fictional inputs for demonstrating the memo structure; they were not established by the brief alone.
+
+[See the 30-second visual walkthrough](decision-memo-walkthrough.md).
+
 ## User prompt
 
 > Use $executive-decision-memo to recommend whether our retailer should renew a three-year warehouse automation contract now or run a six-month competitive process. The incumbent offers a 7% discount for signing this month; service levels are acceptable but not excellent.
