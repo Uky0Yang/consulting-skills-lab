@@ -27,6 +27,7 @@ Each skill should:
 - Keep reference material concise and source-aware.
 - Include a realistic worked example under `examples/`.
 - Include at least two evaluation scenarios with three or more observable rubric criteria.
+- Supply complete fictional raw briefs and critical guardrails in `evaluations/inputs.json`; keep recorded runs and self/independent reviews clearly separated.
 - Be registered in `data/skill-catalog.json`.
 
 ## Validation
@@ -34,7 +35,9 @@ Each skill should:
 Before opening a pull request, run:
 
 ```bash
+python -m pip install -r requirements-dev.txt
 python scripts/validate_skills.py
+python scripts/evaluate_results.py --summary
 python -m unittest discover -s tests -v
 ```
 

@@ -1,4 +1,4 @@
-version: "1.0.0"
+version: "1.0.1"
 requirements:
   - id: V1-001
     description: Every catalogued skill has a realistic worked example.
@@ -18,5 +18,25 @@ requirements:
     code: done
   - id: V1-005
     description: Repository validation detects catalog drift, broken internal links, stale examples, and incomplete evaluation coverage.
+    test: unit
+    code: done
+  - id: FIX-001
+    description: Fictional sizing and value-plan calculations are recomputed and checked against published audit tables.
+    test: unit
+    code: done
+  - id: FIX-002
+    description: Extracted bundles include runnable installation and validation tools, examples, evidence, docs and dependencies.
+    test: unit
+    code: done
+  - id: FIX-003
+    description: Installation rejects invalid selections and overlap, stages all copies, and rolls back replacement failures.
+    test: unit
+    code: done
+  - id: FIX-004
+    description: Evaluation records preserve inputs, outputs, version fingerprints, model/date metadata and evidence-backed reviews.
+    test: unit
+    code: done
+  - id: FIX-005
+    description: Validation parses safe YAML, rejects malformed records, checks versions and local links, and optionally checks HTTP links.
     test: unit
     code: done

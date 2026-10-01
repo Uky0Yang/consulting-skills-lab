@@ -2,6 +2,15 @@
 
 All notable project changes are documented here.
 
+## 1.0.1 - 2026-10-01
+
+- Correct the market-sizing base to £31.752m, retain the full scenario range, and make the unmatched supply-side period explicit.
+- Separate risk-weighted annual value, one-off costs and first-year ramp in the value-plan example; add structured calculation fixtures and checked audit tables.
+- Ship a runnable bundle with installation/validation scripts, examples, evaluations, tests, docs and requirements; include licenses in individual skill ZIPs and derive release version from the catalog.
+- Stage every installation before replacement, reject empty/duplicate selections and source overlap, recheck overwrite permissions and roll back failures without discarding recovery backups.
+- Add complete fictional inputs for 16 scenarios, an evidence-record CLI and four explicitly self-reviewed current-session outputs. Do not score unobserved case-interview behavior.
+- Parse YAML safely with duplicate-key detection; check semantic/version consistency, malformed JSON, images, heading anchors, reference-style links and opt-in HTTP reachability.
+
 ## 1.0.0 - 2026-07-12
 
 - Publish eight consulting skills spanning transformation, strategy, diligence, execution, communication, presentations, and case coaching.

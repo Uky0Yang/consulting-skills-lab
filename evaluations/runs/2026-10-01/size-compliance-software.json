@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "scenario_id": "size-compliance-software",
+  "skill": "market-sizing-sanity-check",
+  "project_version": "1.0.1",
+  "skill_sha256": "0c19ba686ea16af6c20e577b4520b8ca1b8ec5815338528bad5a26a81d7bbe8d",
+  "model": "not_exposed",
+  "run_at": "2026-10-01T22:28:13.261463+00:00",
+  "execution_mode": "current_codex_session",
+  "prompt": "Audit a £50m UK compliance software market claim and test whether £4m entrant revenue is credible.",
+  "input": "Fictional training data. Decision: £6m UK entry investment; market-size gate £20m year-three supplier recurring revenue and entrant target £4m/year. Customer: regulated firms with 100-999 employees; excludes services. Low/base/high drivers: eligible firms 7000/7500/8000; workflow fit 60/70/75%; paid adoption 45/60/70%; seats 11/14/16 per adopter; realized annual seat price £650/720/780. Independent CURRENT supplier scan: 4 providers at £5m each and 8 at £1.2m. No current-to-year-three growth or bundled-revenue bridge is provided. Entrant can win 80 customers/year for three years, before churn. Audit the £50m claim, calculate scenarios, reconcile limitations and test reachability.",
+  "input_sha256": "6ffe50aca161bfab50e47ecbba23d709827b59cdf051a7149a3cd67d1bfef89e",
+  "rubric": [
+    "Defines scope, metric, period, and units",
+    "Uses an independent cross-check and reconciles differences",
+    "Tests an obtainable-market decision threshold"
+  ],
+  "critical_guardrails": [
+    "Do not manufacture a narrower range or period reconciliation",
+    "Do not declare the £4m target reachable without a capacity path"
+  ],
+  "output": "# Compliance software sizing — current-session response\n\n## Decision\n\nDo not approve the full £6m entry investment on this evidence. The fictional year-three model gives a £31.752m base and a £13.5135–52.416m range. £50m is an upside result, not a defensible base. The base clears the £20m gate; the low case fails. The entrant's £4m target is not supported by the stated sales capacity.\n\n## Definition and calculations\n\nMetric: annual supplier recurring revenue in year three, UK regulated firms with 100–999 employees, excluding services. Units are firms × workflow-fit share × adoption share × seats/firm × pounds/seat/year = pounds/year.\n\nLow: 7,000 × .60 × .45 × 11 × £650 = £13,513,500/year.\nBase: 7,500 × .70 × .60 × 14 × £720 = £31,752,000/year.\nHigh: 8,000 × .75 × .70 × 16 × £780 = £52,416,000/year.\n\nThe supply-side scan gives 4 × £5m + 8 × £1.2m = £29.6m current annual revenue. It is independent of the buyer/seat model, but not period-aligned. The base is 7.27% higher; this difference is not evidence of a growth rate. Missing bundled-revenue and period bridges prevent reconciliation or a narrower forecast range. All inputs are fictional assumptions, not verified market facts.\n\n## Reachability and next gate\n\nAt £720 × 14 = £10,080 annual revenue/customer, £4m requires ceil(4,000,000/10,080) = 397 active customers. The plan supports 80 × 3 = 240 before churn, or £2.4192m/year, leaving a 157-customer gap. This is an upper bound absent churn, ramp and sales-cycle data.\n\nAt the other base inputs, the £20m market gate needs paid adoption of 20m/(7,500 × .70 × 14 × £720) = 37.79%. That one-driver threshold does not make the joint downside safe. Strategy should validate adoption/seats with buyer evidence, quantify the supply-side scope/time bridge, and show an owned channel-capacity plan before investment approval. Neither uncertainty robustness nor obtainable revenue is demonstrated.\n",
+  "output_sha256": "d02a2158a25dd39403decdbecf8dc94cad0b264150ead49533ed2560ad0813c4",
+  "review": {
+    "reviewer": "Codex current session",
+    "mode": "self_review",
+    "guardrails_reviewed": true,
+    "scores": [
+      {"criterion": 0, "score": 2, "evidence": "annual supplier recurring revenue in year three", "rationale": "The output defines the revenue basis, customer boundary, geography and annual units before using the model."},
+      {"criterion": 1, "score": 2, "evidence": "Missing bundled-revenue and period bridges prevent reconciliation or a narrower forecast range.", "rationale": "The independent provider scan is calculated, its current-period mismatch is explicit, and no unsupported narrowing is made."},
+      {"criterion": 2, "score": 2, "evidence": "397 active customers", "rationale": "The output calculates the required customers, compares 240 capacity and tests the market-size adoption gate."}
+    ],
+    "critical_failures": []
+  }
+}

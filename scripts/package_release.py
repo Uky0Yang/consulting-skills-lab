@@ -34,8 +34,12 @@ def skill_files(skill_dir: Path, prefix: str) -> list[tuple[Path, str]]:
     ]
 
 
-def build_release(output_dir: Path, version: str) -> list[Path]:
+def build_release(output_dir: Path, version: str | None = None) -> list[Path]:
     catalog = json.loads(CATALOG_PATH.read_text(encoding="utf-8"))
+    catalog_version = catalog["project_version"]
+    if version is not None and version != catalog_version:
+        raise ValueError(f"release version {version!r} does not match catalog {catalog_version!r}")
+    version = catalog_version
     entries = catalog["skills"]
     output_dir.mkdir(parents=True, exist_ok=True)
     archives: list[Path] = []
@@ -45,13 +49,20 @@ def build_release(output_dir: Path, version: str) -> list[Path]:
         name = entry["name"]
         skill_dir = ROOT / entry["path"]
         files = skill_files(skill_dir, name)
+        if not (skill_dir / "LICENSE").is_file():
+            files.append((ROOT / "LICENSE", f"{name}/LICENSE"))
         archive_path = output_dir / f"{name}-{version}.zip"
         write_archive(archive_path, files)
         archives.append(archive_path)
         all_files.extend(skill_files(skill_dir, f"skills/{name}"))
 
-    for extra in (ROOT / "README.md", ROOT / "LICENSE", CATALOG_PATH):
-        all_files.append((extra, extra.relative_to(ROOT).as_posix()))
+    # Explicit allowlist: no build outputs, VCS files, or local configuration.
+    for directory in ("scripts", "data", "examples", "evaluations", "docs", "tests"):
+        all_files.extend(skill_files(ROOT / directory, directory))
+    for name in ("README.md", "LICENSE", "CONTRIBUTING.md", "SECURITY.md", "CODE_OF_CONDUCT.md", "ROADMAP.md", "CHANGELOG.md", "AGENTS.md", "spec.yaml", "requirements-dev.txt"):
+        extra = ROOT / name
+        if extra.is_file():
+            all_files.append((extra, name))
 
     bundle = output_dir / f"consulting-skills-lab-{version}.zip"
     write_archive(bundle, all_files)
@@ -65,10 +76,14 @@ def build_release(output_dir: Path, version: str) -> list[Path]:
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Build deterministic Consulting Skills Lab release archives.")
     parser.add_argument("--output", type=Path, default=ROOT / "dist")
-    parser.add_argument("--version", required=True)
+    parser.add_argument("--version", help="Defaults to the catalog version; an explicit version must match it.")
     args = parser.parse_args(argv)
 
-    archives = build_release(args.output.resolve(), args.version)
+    try:
+        archives = build_release(args.output.resolve(), args.version)
+    except (OSError, ValueError, KeyError, TypeError) as exc:
+        print(f"Packaging failed: {exc}", file=sys.stderr)
+        return 1
     print(f"Built {len(archives)} archive(s) in {args.output.resolve()}")
     return 0
 

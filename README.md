@@ -52,7 +52,7 @@ python scripts/install_skills.py --all
 python scripts/install_skills.py --all --dry-run
 ```
 
-Use `--destination <path>` for a custom directory and `--force` to replace an existing selected skill. The installer validates every requested name before copying anything.
+Use `--destination <path>` for a custom directory and `--force` to replace an existing selected skill. Empty/duplicate selections and source-directory overlap are rejected. All copies are staged before existing installations are replaced; a failed copy leaves the previous installation untouched, and replacement errors trigger rollback. If rollback itself fails, the installer reports the recovery directory rather than deleting its backups. Sudden power loss is not covered by this process-level guarantee. Installation uses only the Python standard library.
 
 ### Manual installation
 
@@ -97,24 +97,44 @@ Use $consulting-template-style to redesign this market analysis deck in a Bain-i
 
 ## Validate
 
-Run the repository validator:
+Install the development-only YAML validation dependency, then run the checks:
 
 ```bash
+python -m pip install -r requirements-dev.txt
 python scripts/validate_skills.py
+python scripts/check_example_calculations.py
 python -m unittest discover -s tests -v
 ```
 
 If you have the local Codex skill creator installed, you can also run its quick validator against each skill folder.
 
-The repository includes two realistic evaluation scenarios per skill in [`evaluations/manifest.json`](evaluations/manifest.json). Each scenario defines observable rubric criteria and a pass rule for forward-testing skill behavior.
+Local validation covers YAML syntax, metadata, catalog/version consistency, calculation audit tables, saved evaluation records, image/file links, heading anchors and reference-style links. Network checks are opt-in:
+
+```bash
+python scripts/validate_skills.py --check-external-links
+```
+
+HTTP errors are reported; access/rate-limit and network failures are labelled unverified, not proof that a source is broken. This is a readiness check, not a security certification.
+
+## Behavioral evaluation
+
+The [evaluation guide](evaluations/README.md) connects 16 scenarios to complete fictional [input briefs](evaluations/inputs.json), saved responses and evidence-backed scorecards. Run the coverage summary:
+
+```bash
+python scripts/evaluate_results.py --summary
+```
+
+The initial evidence set contains four current-session outputs for market sizing and value creation, with **self-review**, not an independent benchmark. Twelve scenarios remain unrun. Static test passes do not establish skill decision quality; model IDs are recorded as `not_exposed` when unavailable, never guessed.
 
 ## Release Packages
 
-Every tagged release contains one ZIP per skill, an all-skills bundle, and `SHA256SUMS.txt`. Maintainers can reproduce the artifacts locally:
+Every tagged release contains one ZIP per skill (including its license), a runnable all-skills bundle, and `SHA256SUMS.txt`. The bundle includes scripts, catalog, examples, evaluation evidence, tests, documentation assets and development requirements. After extracting it, run the same install/validate commands above. Maintainers can reproduce the artifacts locally:
 
 ```bash
-python scripts/package_release.py --output dist --version 1.0.0
+python scripts/package_release.py --output dist
 ```
+
+The version comes from the catalog. An explicit `--version 1.0.1` must match it; mismatches fail before archives are written. Archive ordering and timestamps are fixed, and repeated builds are checked for identical bytes within the same environment.
 
 ## Design Principles
 

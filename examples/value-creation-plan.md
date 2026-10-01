@@ -6,17 +6,31 @@
 
 ## Sample output
 
+This is a fictional planning exercise, not validated finance data. The additional probability and cost assumptions are explicit in [example-calculations.json](../data/example-calculations.json).
+
 ### Executive answer
 
-Underwrite £3.2m net run-rate value for the first year, not the £9m headline potential. Launch pricing and procurement immediately; treat cross-sell as a validation sprint until account overlap, capacity, and conversion evidence exist.
+Use £3.42m risk-weighted annual run-rate as an illustrative planning hypothesis, not an underwritten or realized first-year result. The £9m headline is gross potential. Validate pricing and procurement through day-30 gates; keep cross-sell out of the base until account overlap, capacity, margin, and conversion evidence exist.
 
 ### Value bridge
 
-| Initiative | Gross potential | Cost/disbenefit | Probability-weighted net plan | Confidence |
-| --- | ---: | ---: | ---: | --- |
-| Pricing discipline | £3.0m | £0.4m churn/mix risk | £1.8m | Directional |
-| Procurement waves | £2.0m | £0.3m implementation | £1.4m | Corroborated |
-| Cross-sell | £4.0m | Not yet underwritten | £0.0m | Untested |
+| Initiative | Gross annual potential | Recurring disbenefit | Realization probability | Risk-weighted annual value | One-off cash cost | Finance status |
+| --- | ---: | ---: | ---: | ---: | ---: | --- |
+| Pricing discipline | £3.0m | £0.4m churn/mix | 70% assumed | (£3.0m − £0.4m) × 70% = £1.82m | £0.0m assumed | Unreviewed |
+| Procurement waves | £2.0m | £0.0m assumed | 80% assumed | £2.0m × 80% = £1.60m | £0.3m implementation | Unreviewed |
+| Cross-sell | £4.0m | Unknown | Not estimated | £0.0m included | Unknown | Untested |
+
+The £0.4m is a conditional recurring pricing disbenefit, not another probability haircut. The £0.3m implementation cost is paid regardless of whether procurement succeeds; it is not a recurring run-rate deduction. £3.42m − £0.3m = £3.12m is a **full-year-equivalent cash illustration before ramp**, not a forecast of actual first-year cash or EBITDA. Actual year-one benefit requires monthly rollout, recurring-cost, accounting, and attribution schedules agreed with finance.
+
+<!-- calculations:value_plan:start -->
+| Calculation | Exact result |
+| --- | ---: |
+| Risk-weighted pricing annual value | £1.82m |
+| Risk-weighted procurement annual value | £1.6m |
+| Combined annual run-rate | £3.42m |
+| One-off implementation cash outflow | £0.3m |
+| Full-year-equivalent net cash (before ramp) | £3.12m |
+<!-- calculations:value_plan:end -->
 
 ### Initiative cards
 
@@ -38,6 +52,6 @@ At day 30, approve pricing rollout only if elasticity evidence supports at least
 
 ## Why this is a strong response
 
-- It separates potential, underwritten, and realized value.
+- It separates gross potential, an unreviewed planning hypothesis, and realized value; no benefit is committed yet.
 - Every initiative has one accountable owner and a red flag.
 - It prevents untested cross-sell upside from entering the base plan.

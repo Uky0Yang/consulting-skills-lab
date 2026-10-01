@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "scenario_id": "size-recycling-capacity",
+  "skill": "market-sizing-sanity-check",
+  "project_version": "1.0.1",
+  "skill_sha256": "0c19ba686ea16af6c20e577b4520b8ca1b8ec5815338528bad5a26a81d7bbe8d",
+  "model": "not_exposed",
+  "run_at": "2026-10-01T22:28:13.682067+00:00",
+  "execution_mode": "current_codex_session",
+  "prompt": "Size the year-five serviceable battery recycling volume for a capacity investment.",
+  "input": "Fictional capacity exercise, not investment advice. Year-five accessible input feedstock is 2400/4000/6000 tonnes/year in low/base/high cases; independent collection-contract inventory supports only 4000 tonnes/year in the base. Nameplate input capacity 20000 tonnes/year; operational input capacity after downtime 16000. Qualified demand equivalent is 12000 input tonnes/year. Recovery yield is 80% of processed input; no further yield loss. Net contribution after variable costs is £150 per INPUT tonne; annual fixed operating cost £1.2m. No selling-price or regulatory data are supplied. Define input versus recovered-output units, compute constrained throughput and break-even utilization, and say whether the supply gate is met without inventing growth or permits.",
+  "input_sha256": "8a5db3956dc70a23a17bd6513db760fdde3e5fc6445fe4edb67bd4b98bb463bb",
+  "rubric": [
+    "Separates feedstock, demand, capacity, yield, and utilization",
+    "Uses coherent low/base/high scenarios",
+    "Calculates a break-even utilization or supply threshold"
+  ],
+  "critical_guardrails": [
+    "Do not count announced capacity as available feedstock",
+    "Do not apply the input-tonne contribution to recovered-output tonnes or invent permits"
+  ],
+  "output": "# Recycling capacity — current-session response\n\n## Decision and boundary\n\nThe fictional supply gate fails in all three supplied cases. Base year-five constrained throughput is 4,000 INPUT tonnes/year, not 20,000 tonnes of feedstock merely because that capacity is announced. This is a training calculation, not an investment recommendation or a permit assessment.\n\n## Constraint model\n\nFor each case, processed input = min(accessible feedstock, operational input capacity, qualified demand in equivalent input tonnes). Nameplate 20,000 becomes operational capacity of 16,000 after downtime; do not apply downtime twice.\n\n| Case | Accessible input | Processed input | Recovered output at 80% yield | Operational utilization |\n| --- | ---: | ---: | ---: | ---: |\n| Low | 2,400 t/year | 2,400 t/year | 1,920 t/year | 15% |\n| Base | 4,000 t/year | 4,000 t/year | 3,200 t/year | 25% |\n| High | 6,000 t/year | 6,000 t/year | 4,800 t/year | 37.5% |\n\nThe independent collection-contract inventory supports only 4,000 input tonnes/year in the base. It anchors accessible supply, not selling price, permits or the 12,000-tonne demand assumption. No growth bridge supports the high case beyond the supplied fictional scenario.\n\n## Break-even and evidence gate\n\nThe £150 contribution is per INPUT tonne, already net of variable costs. Required input = £1,200,000 fixed cost / £150 = 8,000 tonnes/year. Required operational utilization = 8,000/16,000 = 50% (or 40% of nameplate; do not mix denominators).\n\nBase contribution is £600,000, leaving a £600,000 annual operating shortfall before any unprovided capital costs. Low/high shortfalls are £840,000/£300,000. Even high accessible feedstock remains below 8,000 tonnes. Recovery yield is used to report output, not multiplied into an input-tonne contribution margin.\n\nThe next gate is evidence for at least 8,000 qualified accessible input tonnes/year on a consistent contract/time basis, or a documented change to contribution/fixed costs. Commercial should validate contract delivery and feedstock quality; operations should test yield/uptime; finance should validate the contribution definition and omitted capital economics. Regulatory specialists must assess permits separately; no permission is assumed.\n",
+  "output_sha256": "0f3f335c814792340fdb296ac41de4072e1538b257b7005c32f14f39a4a8281a",
+  "review": {
+    "reviewer": "Codex current session",
+    "mode": "self_review",
+    "guardrails_reviewed": true,
+    "scores": [
+      {"criterion": 0, "score": 2, "evidence": "processed input = min(accessible feedstock, operational input capacity, qualified demand in equivalent input tonnes)", "rationale": "The output separates input supply, operational capacity, demand, yield and the utilization denominator."},
+      {"criterion": 1, "score": 2, "evidence": "| Base | 4,000 t/year | 4,000 t/year | 3,200 t/year | 25% |", "rationale": "Low, base and high cases use the same constraint/yield logic and retain consistent input versus output units."},
+      {"criterion": 2, "score": 2, "evidence": "Required operational utilization = 8,000/16,000 = 50%", "rationale": "The break-even calculation uses input-tonne contribution and shows why every provided supply case fails the gate."}
+    ],
+    "critical_failures": []
+  }
+}

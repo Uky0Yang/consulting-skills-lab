@@ -36,6 +36,8 @@
 
 ## Near Term
 
+- Independently run and review the 12 currently unrun evaluation scenarios; keep self-review and independent benchmark claims separate.
+
 - Add more original cases for healthcare, pricing, private equity, and operations.
 - Add a machine-readable index for original cases by type, industry, geography, and difficulty.
 - Add original, brand-neutral slide examples generated from the consulting layout catalog.

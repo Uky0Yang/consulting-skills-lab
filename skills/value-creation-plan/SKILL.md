@@ -99,7 +99,8 @@ Decision required: <approval, resource, or escalation>
 | --- | --- |
 | Initiative | <clear action-oriented name> |
 | Value mechanism | <how the action changes a financial or risk metric> |
-| Net value | <gross benefit - one-off cost - recurring cost> |
+| Net annual run-rate | <annual gross benefit - recurring cost/disbenefit; show probability separately> |
+| One-off cash and in-year value | <one-off cost; phased year-one benefit/cash on an explicit timeline> |
 | Confidence | <validated / directional / untested> |
 | Accountable owner | <executive owner> |
 | Delivery lead | <day-to-day lead> |
@@ -144,6 +145,7 @@ Decision required: <approval, resource, or escalation>
 
 - Do not represent value potential as realized results; retain the confidence and finance-status labels throughout the output.
 - Use a defined baseline and avoid double-counting benefits across initiatives, functions, or acquisitions.
+- Do not deduct one-off costs from recurring annual run-rate or call a full-year run-rate a first-year result; show implementation timing and cash separately.
 - Treat revenue as value only when its incremental margin, cost-to-serve, and likelihood of realization have been considered.
 - Do not recommend cost actions that bypass safety, legal, regulatory, customer, labor, or contractual obligations.
 - Keep client, target, employee, and transaction information confidential; use anonymized placeholders unless the user has provided authorized data.

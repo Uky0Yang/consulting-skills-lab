@@ -20,6 +20,9 @@ def load_catalog() -> dict:
     return json.loads(CATALOG_PATH.read_text(encoding="utf-8"))
 
 
+VERSION = load_catalog()["project_version"]
+
+
 class TestV1ContentCoverage(unittest.TestCase):
     def test_should_have_a_worked_example_for_every_skill(self) -> None:
         """REQ-V1-001: Every catalogued skill has a realistic worked example."""
@@ -107,14 +110,14 @@ class TestV1ReleasePackaging(unittest.TestCase):
         """REQ-V1-004: Release packaging produces a bundle and SHA-256 manifest."""
         with tempfile.TemporaryDirectory() as temp_dir:
             result = subprocess.run(
-                [sys.executable, str(PACKAGER_PATH), "--output", temp_dir, "--version", "1.0.0"],
+                [sys.executable, str(PACKAGER_PATH), "--output", temp_dir, "--version", VERSION],
                 cwd=ROOT,
                 capture_output=True,
                 text=True,
                 check=False,
             )
             output = Path(temp_dir)
-            bundle = output / "consulting-skills-lab-1.0.0.zip"
+            bundle = output / f"consulting-skills-lab-{VERSION}.zip"
             checksums = output / "SHA256SUMS.txt"
             outcome = (result.returncode, bundle.is_file(), checksums.is_file())
 
@@ -124,13 +127,13 @@ class TestV1ReleasePackaging(unittest.TestCase):
         """REQ-V1-004: The full bundle contains every catalogued skill."""
         with tempfile.TemporaryDirectory() as temp_dir:
             subprocess.run(
-                [sys.executable, str(PACKAGER_PATH), "--output", temp_dir, "--version", "1.0.0"],
+                [sys.executable, str(PACKAGER_PATH), "--output", temp_dir, "--version", VERSION],
                 cwd=ROOT,
                 capture_output=True,
                 text=True,
                 check=False,
             )
-            bundle = Path(temp_dir) / "consulting-skills-lab-1.0.0.zip"
+            bundle = Path(temp_dir) / f"consulting-skills-lab-{VERSION}.zip"
             with zipfile.ZipFile(bundle) as archive:
                 names = set(archive.namelist())
             missing = [
@@ -145,14 +148,14 @@ class TestV1ReleasePackaging(unittest.TestCase):
         """REQ-V1-004: The checksum manifest matches the generated bundle."""
         with tempfile.TemporaryDirectory() as temp_dir:
             subprocess.run(
-                [sys.executable, str(PACKAGER_PATH), "--output", temp_dir, "--version", "1.0.0"],
+                [sys.executable, str(PACKAGER_PATH), "--output", temp_dir, "--version", VERSION],
                 cwd=ROOT,
                 capture_output=True,
                 text=True,
                 check=False,
             )
             output = Path(temp_dir)
-            bundle = output / "consulting-skills-lab-1.0.0.zip"
+            bundle = output / f"consulting-skills-lab-{VERSION}.zip"
             expected = hashlib.sha256(bundle.read_bytes()).hexdigest()
             manifest = (output / "SHA256SUMS.txt").read_text(encoding="utf-8")
 

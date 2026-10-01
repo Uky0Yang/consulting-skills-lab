@@ -27,19 +27,21 @@
 
 What do you conclude, and what would you test next?
 
-### Example final scorecard
+### Provisional scorecard for the interaction shown
+
+Only structure and communication have been observed. The excerpt stops before the candidate analyzes the data or gives a final synthesis; those dimensions must remain unscored.
 
 | Dimension | Score | Evidence | Next improvement |
 | --- | ---: | --- | --- |
 | Structure | 4/5 | Tailored cost tree and sensible first cut | State a sharper initial hypothesis |
-| Analysis | 3/5 | Located next-day margin collapse | Quantify the contribution decline before moving on |
-| Synthesis | 3/5 | Identified the right problem | Link each finding to the £24m recovery target |
+| Analysis | Not observed | No candidate calculation is shown | Ask the candidate to quantify the contribution change next |
+| Synthesis | Not observed | No final recommendation is shown | Assess only after the candidate gives an answer |
 | Communication | 4/5 | Clear and concise | Signpost transitions more explicitly |
 
-**Targeted drill:** Complete three 10-minute exercises that reconcile segment findings to an absolute profit target. Advance only after two consecutive answers quantify the gap correctly.
+**Next step:** Wait for the candidate's calculation and interpretation. Select a drill only after a specific math or synthesis weakness is demonstrated.
 
 ## Why this is a strong response
 
 - The coach controls disclosure and never solves the case for the candidate.
 - Feedback cites observed behavior rather than personality.
-- The practice plan targets the demonstrated weakness.
+- Unobserved behavior is not scored and no weakness is inferred from missing dialogue.

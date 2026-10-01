@@ -1,0 +1,17 @@
+{
+  "fictional": true,
+  "market": {
+    "low": [7000, "0.60", "0.45", 11, 650],
+    "base": [7500, "0.70", "0.60", 14, 720],
+    "high": [8000, "0.75", "0.70", 16, 780],
+    "supply_bands": [[4, 5000000], [8, 1200000]],
+    "market_threshold": 20000000,
+    "entrant_target": 4000000,
+    "wins_per_year": 80,
+    "years": 3
+  },
+  "value_plan": {
+    "pricing": {"gross": 3000000, "recurring_disbenefit": 400000, "probability": "0.70", "one_off": 0},
+    "procurement": {"gross": 2000000, "recurring_disbenefit": 0, "probability": "0.80", "one_off": 300000}
+  }
+}
