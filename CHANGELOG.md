@@ -2,6 +2,14 @@
 
 All notable project changes are documented here.
 
+## 1.1.0 - 2026-10-02
+
+- Add three standalone skills: business problem framing, expert interview synthesis, and pricing/unit economics. Each includes routed methods, editable templates, a full fictional worked example, and two complete evaluation briefs with critical guardrails.
+- Add a standard-library monthly pricing calculator with explicit contribution, CAC, recovery, break-even and LTV-proxy definitions. Handle zero/missing churn, zero acquisitions, nonpositive contribution and invalid inputs without inventing finite results.
+- Automatically verify pricing baseline and alternative-price audit tables from the supplied fictional inputs.
+- Integrate all eleven skills with the catalog, README, installer and release packaging; normalize CSV line endings in evaluation fingerprints across Windows and Linux.
+- Archive three isolated new-skill responses and separate model reviews with literal scoring evidence, generation timestamps, fingerprints and reproducible pricing inputs. Treat these as selected behavioral checks, not a broad benchmark.
+
 ## 1.0.1 - 2026-10-01
 
 - Correct the market-sizing base to £31.752m, retain the full scenario range, and make the unmatched supply-side period explicit.

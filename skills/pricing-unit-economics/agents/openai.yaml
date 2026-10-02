@@ -1,0 +1,4 @@
+interface:
+  display_name: "Pricing and Unit Economics"
+  short_description: "Audit pricing, contribution and CAC recovery"
+  default_prompt: "Use $pricing-unit-economics to compare these pricing options, audit the economics and define a validation test."

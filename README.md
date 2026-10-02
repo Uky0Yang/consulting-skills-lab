@@ -4,9 +4,9 @@
 [![Latest release](https://img.shields.io/github/v/release/Uky0Yang/consulting-skills-lab)](https://github.com/Uky0Yang/consulting-skills-lab/releases/latest)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-Reusable Codex-style consulting skills for strategy, transformation, diligence, executive communication, interviews, and presentation design.
+Eleven reusable Codex-style consulting skills for problem framing, research, pricing, strategy, transformation, diligence, execution, communication and presentation design.
 
-This repository packages practical consulting workflows as portable skill folders. The current release covers scaling agentic AI beyond pilots, mapping markets from messy signals, triangulating market size, running rapid commercial due diligence, turning analysis into executive decision memos, building accountable 100-day value plans, coaching case interviews, and formatting analytical slides.
+This repository packages practical consulting workflows as portable skill folders. Start with an ambiguous decision, organize interview evidence, or audit pricing economics; then move into market analysis, diligence, a decision memo or an accountable execution plan. Skills also cover scaling agentic AI beyond pilots, case-interview practice and analytical slide formatting.
 
 ## Who this is for
 
@@ -22,6 +22,9 @@ This repository packages practical consulting workflows as portable skill folder
 
 | Skill | Use it for | Example |
 | --- | --- | --- |
+| [`business-problem-framing`](skills/business-problem-framing/SKILL.md) | Ambiguous requests, decision boundaries, issue trees, competing hypotheses | [CRM investment request](examples/business-problem-framing.md) |
+| [`expert-interview-synthesis`](skills/expert-interview-synthesis/SKILL.md) | Neutral interview guides, evidence provenance, conflicting views, findings | [Ticket-triage pilot](examples/expert-interview-synthesis.md) |
+| [`pricing-unit-economics`](skills/pricing-unit-economics/SKILL.md) | Pricing options, contribution, CAC/payback, break-even and validation | [Support-software offer](examples/pricing-unit-economics.md) |
 | [`agentic-ai-transformation-office`](skills/agentic-ai-transformation-office/SKILL.md) | AI transformation, pilot-to-value diagnosis, workflow redesign, governance | [90-day pilot reset](examples/agentic-ai-transformation-office.md) |
 | [`market-map-signal-scan`](skills/market-map-signal-scan/SKILL.md) | Market analysis, competitive landscape, signal confidence, opportunity gaps | [Contact-center QA market](examples/market-map-signal-scan.md) |
 | [`market-sizing-sanity-check`](skills/market-sizing-sanity-check/SKILL.md) | TAM/SAM/SOM, demand sizing, capacity and growth sanity checks | [Compliance software sizing](examples/market-sizing-sanity-check.md) |
@@ -30,6 +33,21 @@ This repository packages practical consulting workflows as portable skill folder
 | [`value-creation-plan`](skills/value-creation-plan/SKILL.md) | 100-day plans, synergies, initiative ownership, benefits tracking | [Distributor value plan](examples/value-creation-plan.md) |
 | [`consulting-case-interview-coach`](skills/consulting-case-interview-coach/SKILL.md) | Mock cases, case math, anchored feedback, practice planning | [Profitability case](examples/consulting-case-interview-coach.md) |
 | [`consulting-template-style`](skills/consulting-template-style/SKILL.md) | Consulting decks, chart books, slide redesign, formatting QA | [Market-entry deck](examples/consulting-template-style.md) |
+
+## Choose a Starting Point
+
+- **The problem or decision is unclear:** use `business-problem-framing`. Carry the decision brief, metric definitions and priority hypotheses into research.
+- **You have interview notes, not trustworthy conclusions:** use `expert-interview-synthesis`. Carry source IDs, contrary evidence, confidence and verification tasks into market analysis or diligence.
+- **You need to know whether an offer can make money:** use `pricing-unit-economics`. Carry cost definitions, calculated thresholds and unverified demand assumptions into a decision memo or value plan.
+- **The question is already clear:** go directly to the relevant existing skill. The skills are independent; the sequence is useful, not mandatory.
+
+Reusable starting files: [decision brief](skills/business-problem-framing/assets/decision-brief.md), [hypothesis workplan CSV](skills/business-problem-framing/assets/hypothesis-plan.csv), [interview guide](skills/expert-interview-synthesis/assets/interview-guide.md), [evidence ledger CSV](skills/expert-interview-synthesis/assets/interview-evidence.csv), [pricing input JSON](skills/pricing-unit-economics/assets/unit-economics-input.json) and [pricing experiment CSV](skills/pricing-unit-economics/assets/pricing-experiment.csv).
+
+The pricing skill includes a standard-library calculator. This command audits the labelled fictional example; it does not fetch prices, predict demand or change billing:
+
+```bash
+python skills/pricing-unit-economics/scripts/calculate_unit_economics.py
+```
 
 ## Install
 
@@ -59,6 +77,9 @@ Use `--destination <path>` for a custom directory and `--force` to replace an ex
 Copy the skill folders you want into your local Codex skills directory:
 
 ```powershell
+Copy-Item -Recurse .\skills\business-problem-framing "$env:USERPROFILE\.codex\skills\"
+Copy-Item -Recurse .\skills\expert-interview-synthesis "$env:USERPROFILE\.codex\skills\"
+Copy-Item -Recurse .\skills\pricing-unit-economics "$env:USERPROFILE\.codex\skills\"
 Copy-Item -Recurse .\skills\agentic-ai-transformation-office "$env:USERPROFILE\.codex\skills\"
 Copy-Item -Recurse .\skills\market-map-signal-scan "$env:USERPROFILE\.codex\skills\"
 Copy-Item -Recurse .\skills\market-sizing-sanity-check "$env:USERPROFILE\.codex\skills\"
@@ -70,6 +91,18 @@ Copy-Item -Recurse .\skills\consulting-template-style "$env:USERPROFILE\.codex\s
 ```
 
 Then start a new Codex session and trigger a skill by name, for example:
+
+```text
+Use $business-problem-framing to turn this business request into a decision brief, issue tree and evidence plan.
+```
+
+```text
+Use $expert-interview-synthesis to prepare neutral questions and turn these notes into traceable findings.
+```
+
+```text
+Use $pricing-unit-economics to compare these prices, audit contribution and payback, and propose a bounded test.
+```
 
 ```text
 Use $agentic-ai-transformation-office to diagnose why our AI pilots are not scaling.
@@ -118,13 +151,13 @@ HTTP errors are reported; access/rate-limit and network failures are labelled un
 
 ## Behavioral evaluation
 
-The [evaluation guide](evaluations/README.md) connects 16 scenarios to complete fictional [input briefs](evaluations/inputs.json), saved responses and evidence-backed scorecards. Run the coverage summary:
+The [evaluation guide](evaluations/README.md) connects 22 scenarios to complete fictional [input briefs](evaluations/inputs.json), saved responses and evidence-backed scorecards. Run the coverage summary:
 
 ```bash
 python scripts/evaluate_results.py --summary
 ```
 
-The initial evidence set contains four current-session outputs for market sizing and value creation, with **self-review**, not an independent benchmark. Twelve scenarios remain unrun. Static test passes do not establish skill decision quality; model IDs are recorded as `not_exposed` when unavailable, never guessed.
+The initial evidence set contains four historical outputs for market sizing and value creation, with **self-review**, not an independent benchmark. See the guide and coverage summary for current runs and unrun scenarios. Static test passes do not establish skill decision quality; model IDs are recorded as `not_exposed` when unavailable, never guessed.
 
 ## Release Packages
 
@@ -134,7 +167,7 @@ Every tagged release contains one ZIP per skill (including its license), a runna
 python scripts/package_release.py --output dist
 ```
 
-The version comes from the catalog. An explicit `--version 1.0.1` must match it; mismatches fail before archives are written. Archive ordering and timestamps are fixed, and repeated builds are checked for identical bytes within the same environment.
+The version comes from the catalog. An explicit `--version 1.1.0` must match it; mismatches fail before archives are written. Archive ordering and timestamps are fixed, and repeated builds are checked for identical bytes within the same environment.
 
 ## Design Principles
 

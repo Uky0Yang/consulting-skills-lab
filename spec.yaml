@@ -1,5 +1,17 @@
-version: "1.0.1"
+version: "1.1.0"
 requirements:
+  - id: ADD-001
+    description: Three new research skills have routed methods, editable templates, examples and installation/package coverage.
+    test: unit
+    code: done
+  - id: ADD-002
+    description: Each new skill has two complete fictional evaluation briefs with observable rubrics and critical guardrails.
+    test: unit
+    code: done
+  - id: ADD-003
+    description: A portable pricing calculator audits same-period unit economics and handles undefined or invalid inputs explicitly.
+    test: unit
+    code: done
   - id: V1-001
     description: Every catalogued skill has a realistic worked example.
     test: unit

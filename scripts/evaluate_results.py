@@ -24,7 +24,7 @@ def skill_digest(name: str, root: Path = ROOT) -> str:
     for path in sorted(directory.rglob("*")):
         if path.is_file() and "__pycache__" not in path.parts:
             content = path.read_bytes()
-            if path.suffix in (".md", ".yaml", ".json", ".py"):
+            if path.suffix in (".md", ".yaml", ".json", ".py", ".csv"):
                 content = content.replace(b"\r\n", b"\n")
             hasher.update(path.relative_to(directory).as_posix().encode("utf-8") + b"\0")
             hasher.update(hashlib.sha256(content).digest())

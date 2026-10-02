@@ -1,7 +1,34 @@
 {
   "schema_version": 2,
-  "project_version": "1.0.1",
+  "project_version": "1.1.0",
   "skills": [
+    {
+      "name": "business-problem-framing",
+      "path": "skills/business-problem-framing",
+      "category": "problem-solving",
+      "description": "Turn ambiguous or solution-first requests into bounded decisions, testable issue trees and prioritized evidence plans.",
+      "primary_output": "Decision brief, issue tree and hypothesis workplan",
+      "example": "examples/business-problem-framing.md",
+      "tags": ["problem-framing", "issue-tree", "hypotheses", "consulting"]
+    },
+    {
+      "name": "expert-interview-synthesis",
+      "path": "skills/expert-interview-synthesis",
+      "category": "research",
+      "description": "Plan neutral interviews and synthesize supplied evidence into traceable findings, conflicting views and verification actions.",
+      "primary_output": "Interview guide, evidence ledger and findings memo",
+      "example": "examples/expert-interview-synthesis.md",
+      "tags": ["expert-interviews", "qualitative-research", "evidence", "synthesis"]
+    },
+    {
+      "name": "pricing-unit-economics",
+      "path": "skills/pricing-unit-economics",
+      "category": "commercial-strategy",
+      "description": "Compare pricing choices with auditable contribution, acquisition recovery, break-even and demand-sensitive scenarios.",
+      "primary_output": "Pricing options memo and unit-economics audit",
+      "example": "examples/pricing-unit-economics.md",
+      "tags": ["pricing", "unit-economics", "cac", "contribution-margin"]
+    },
     {
       "name": "agentic-ai-transformation-office",
       "path": "skills/agentic-ai-transformation-office",

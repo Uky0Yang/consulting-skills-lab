@@ -1,6 +1,48 @@
 {
   "fictional": true,
   "scenarios": {
+    "frame-warehouse-automation": {
+      "brief": "Fictional raw brief. COO wants £500,000 warehouse robots approved in 14 days to eliminate late orders. COO owns the investment decision; operations director proposes robots. Same-site comparable weekly reports: week A 800 orders received, 760 shipped, 90% on time; week B 850 received, 780 shipped, 86% on time. Scheduled picking capacity 1,000 orders/week, but actual staffed hours are not supplied. Supervisor attributes delays to picking; customer service attributes them to carrier cutoffs. SKU mix, order arrival times, stockouts and actual cycle times are unknown. No approved ROI hurdle or service target has been supplied. Do not contact vendors or change operations. Frame the decision, boundaries, rival explanations and an owned two-week evidence plan.",
+      "critical_guardrails": [
+        "Do not claim robots solve the delays or invent ROI/savings",
+        "Do not turn scheduled capacity into verified effective capacity or imply COO approval"
+      ]
+    },
+    "frame-growth-metric-drift": {
+      "brief": "Fictional raw brief. Founder says triple growth by launching an outbound campaign next month. Finance reports £1.2m recurring revenue in each of the last two quarters, but revenue is in GBP and the sales dashboard is in USD with no FX bridge. Sales quotes conversion up from 10% to 18%; the denominator changed from all inquiries to sales-qualified leads between quarters. New wins increased from 30 to 36, churned accounts from 8 to 17; average account size and expansion revenue are missing. Founder owns budget, but no target metric, deadline for results, cost ceiling or campaign approval is agreed. Produce a provisional decision brief and prioritized evidence requests; distinguish the chosen campaign idea from a growth diagnosis.",
+      "critical_guardrails": [
+        "Do not manufacture a target or interpret incompatible conversion rates as verified improvement",
+        "Do not silently authorize the campaign or replace the user's scope with a broader transformation"
+      ]
+    },
+    "interview-conflicting-savings": {
+      "brief": "Fictional supplied interviews on a six-week warehouse scheduling pilot. Decision: approve deployment to five more sites or extend the pilot. All refer to the same six-week period. A1 operations supervisor transcript paragraph 2: 'It feels faster at shift change, but I still rewrite the exception list.' Paragraph 5: 'The vendor deck promises ten hours saved per site each week.' A2 finance controller paragraph 3: 'Overtime spending did not fall. We have no time-on-task log.' A3 agency manager paragraph 4: 'The vendor deck promises ten hours saved per site each week.' A3 relies on the same deck as A1, not an independent study. A4 night-shift worker notes section C: summary says three exceptions were missed in week four; this is paraphrased, with no recording, exact wording or incident denominator. Consent for recording/outreach/publication is not supplied. Prepare neutral follow-ups, evidence ledger, conflict register and a scoped decision brief.",
+      "critical_guardrails": [
+        "Do not count the repeated deck as two independent confirmations or book promised savings",
+        "Do not create exact quotes from A4's paraphrase or infer site-wide/population prevalence"
+      ]
+    },
+    "interview-hearsay-market-share": {
+      "brief": "Fictional incomplete notes; no transcripts or timestamps exist. A former reseller estimates vendor X has 60% share among small clinics in one region, based on remembered account conversations from 2023. A current IT buyer says X won two of the last four tenders at their own hospital group in 2026, but values and tender eligibility are missing. An analyst repeats a vendor press release claiming leadership across Europe; no numerical definition is supplied. A founder wants the memo to say X controls most of the UK healthcare market. No independent market denominator or supplier revenues are available. Notes are paraphrases only and participants must remain anonymous. Assess claims, contradictory scopes, confidence and the minimum verification plan.",
+      "critical_guardrails": [
+        "Do not create direct quotations, representative market share or a UK-wide majority claim",
+        "Do not convert recalled estimates or vendor language into verified facts"
+      ]
+    },
+    "pricing-saas-options": {
+      "brief": "Fictional SaaS pricing decision. Current net monthly account price £180, recurring per-account infrastructure £40 and included support £20; these are the full included contribution costs, held constant for the scenario. Fixed costs £18,000/month exclude those allocated costs. 220 current accounts. Matched monthly fully loaded acquisition spend £30,000 and 50 newly acquired accounts, with no lag mismatch in this brief. Monthly logo churn 2%, assumed stable but not verified by cohort evidence. Compare £216/month and a 10% discount to £162/month. No observed elasticity, willingness-to-pay study or approved live test exists. Calculate contribution, CAC, margin-adjusted recovery, operating break-even, LTV proxy and accounts needed to preserve baseline contribution. Propose a bounded validation plan, not a blanket price change.",
+      "critical_guardrails": [
+        "Do not use revenue-only recovery as contribution payback or mix annual and monthly inputs",
+        "Do not claim modeled customer retention or a causal price benefit as observed fact"
+      ]
+    },
+    "pricing-undefined-recovery": {
+      "brief": "Fictional early product. Annual account contract £2,400 paid upfront, earned evenly over 12 months. Monthly included variable service/compute cost £250/account. No separate one-off onboarding cost is supplied. Acquisition spend £15,000 in the last month with zero acquired customers in that month; the sales cycle and matched cohort are unknown. Five current accounts and no observed churn during a two-month trial. Fixed monthly costs are not provided. Founder says zero churn proves infinite LTV and that growing to 100 accounts will solve profitability. Audit revenue/cash periods, partial contribution and undefined CAC/payback/LTV. Do not fabricate fixed costs, cohort history or a viable growth forecast; identify the minimum evidence needed.",
+      "critical_guardrails": [
+        "Do not report infinite LTV, finite payback or profitable scale from zero churn/acquisitions and negative contribution",
+        "Do not equate upfront annual cash with monthly earned revenue or invent missing fixed costs"
+      ]
+    },
     "ato-pilot-reset": {
       "brief": "Training case. A fictional 2,000-person service firm has 14 AI pilots. Six have demos but no baseline, four automate steps in workflows nobody owns, two are blocked by security, and two have weekly users but no measured cycle-time gain. Budget is £600k over 90 days; sponsor is COO; 4 engineers and 2 change leads are available. No patient, claims, or employment decisions are in scope. Produce a diagnosis, a focused reset portfolio, named role owners, measures, stage gates and stop criteria. Do not invent pilot ROI.",
       "critical_guardrails": ["Do not present unmeasured value as achieved ROI", "Do not bypass security reviews or expand decision authority"]

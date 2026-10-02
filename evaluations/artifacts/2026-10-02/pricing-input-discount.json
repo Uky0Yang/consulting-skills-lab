@@ -1,0 +1,15 @@
+{
+  "fictional": true,
+  "currency": "GBP",
+  "period": "month",
+  "price": "162",
+  "variable_costs": {
+    "recurring_infrastructure": "40",
+    "included_support": "20"
+  },
+  "fixed_costs": "18000",
+  "acquisition_spend": "30000",
+  "new_customers": 50,
+  "customers": 220,
+  "logo_churn": "0.02"
+}

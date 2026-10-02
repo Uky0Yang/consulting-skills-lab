@@ -34,9 +34,16 @@
 - Validate internal links, reference routing, catalog integrity, metadata, examples, and evaluation coverage.
 - Test the repository across Linux and Windows on supported Python versions.
 
+## v1.1
+
+- Add `business-problem-framing`, `expert-interview-synthesis` and `pricing-unit-economics` with complete worked examples and six new fictional evaluation briefs.
+- Supply editable decision, hypothesis, interview-evidence and pricing-experiment templates.
+- Add a portable monthly unit-economics calculator and checked baseline/price-option audit tables.
+- Extend installation, packaging and cross-platform evaluation fingerprints to the new resources.
+
 ## Near Term
 
-- Independently run and review the 12 currently unrun evaluation scenarios; keep self-review and independent benchmark claims separate.
+- Run and review the remaining evaluation scenarios; use the coverage summary for the current count and keep self-review, isolated model checks and independent benchmark claims separate.
 
 - Add more original cases for healthcare, pricing, private equity, and operations.
 - Add a machine-readable index for original cases by type, industry, geography, and difficulty.

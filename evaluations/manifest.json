@@ -7,6 +7,75 @@
   },
   "skills": [
     {
+      "skill": "business-problem-framing",
+      "scenarios": [
+        {
+          "id": "frame-warehouse-automation",
+          "prompt": "Frame the warehouse automation request as a bounded decision and a falsifiable evidence plan.",
+          "rubric": [
+            "Separates the requested automation from the observed service problem and keeps decision rights explicit",
+            "Uses comparable demand/capacity metrics and rival hypotheses without treating correlation as causation",
+            "Prioritizes owned tests with scope, timing and decision consequences rather than inventing savings"
+          ]
+        },
+        {
+          "id": "frame-growth-metric-drift",
+          "prompt": "Reframe a growth mandate with changing metric definitions and no agreed target into a provisional decision brief.",
+          "rubric": [
+            "Makes undefined target and sponsor approval provisional rather than silently deciding them",
+            "Identifies denominator, period and mix comparability problems",
+            "Defines competing explanations, disconfirming evidence and the smallest decision-relevant workplan"
+          ]
+        }
+      ]
+    },
+    {
+      "skill": "expert-interview-synthesis",
+      "scenarios": [
+        {
+          "id": "interview-conflicting-savings",
+          "prompt": "Prepare neutral follow-up questions and synthesize conflicting pilot interviews into an evidence-led rollout brief.",
+          "rubric": [
+            "Preserves source locations and distinguishes exact quotation, paraphrase and analyst inference",
+            "Deduplicates a repeated vendor claim and retains contrary evidence without claiming population prevalence",
+            "Links scoped findings and confidence to verification actions and a conditional rollout decision"
+          ]
+        },
+        {
+          "id": "interview-hearsay-market-share",
+          "prompt": "Assess market-share claims from incomplete interview notes without upgrading hearsay or manufacturing quotes.",
+          "rubric": [
+            "Keeps hearsay and participant estimates attributed and does not create verbatim quotations",
+            "Rejects prevalence and market-share inference from a small nonrepresentative sample with incompatible scopes",
+            "Produces neutral verification questions and a provenance-aware findings handoff"
+          ]
+        }
+      ]
+    },
+    {
+      "skill": "pricing-unit-economics",
+      "scenarios": [
+        {
+          "id": "pricing-saas-options",
+          "prompt": "Compare three SaaS prices using contribution economics and volume thresholds without assuming elasticity.",
+          "rubric": [
+            "Calculates same-period contribution, matched CAC, margin-adjusted payback and rounded-up break-even correctly",
+            "Quantifies volume preservation across prices while disclosing constant-cost, mix and retention assumptions",
+            "Labels the LTV approximation and recommends a bounded experiment rather than a proven price uplift"
+          ]
+        },
+        {
+          "id": "pricing-undefined-recovery",
+          "prompt": "Audit a proposed infinite-LTV claim with annual billing, zero acquisitions, zero churn and negative monthly contribution.",
+          "rubric": [
+            "Normalizes annual earned revenue versus monthly costs and separates cash timing",
+            "Withholds finite payback, volume break-even and infinite LTV when inputs or contribution do not support them",
+            "Requests missing matched acquisition, cohort and fixed-cost evidence without inventing a viable scale plan"
+          ]
+        }
+      ]
+    },
+    {
       "skill": "agentic-ai-transformation-office",
       "scenarios": [
         {

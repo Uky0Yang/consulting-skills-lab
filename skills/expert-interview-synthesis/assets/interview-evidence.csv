@@ -1,0 +1,2 @@
+evidence_id,source_id,source_location,participant_role,period,knowledge_basis,quote_or_paraphrase,text,theme,claim_or_observation,analyst_inference,counterevidence_ids,confidence,verification_action
+E1,,,,,,paraphrase,,,,,,unverified,

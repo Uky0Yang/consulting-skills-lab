@@ -1,0 +1,2 @@
+option_id,segment,price_metric,net_price,period,variable_cost_definition,volume_assumption,retention_assumption,contribution_gate,outcome_window,owner,exposure_limit,rollback_rule,status
+P1,,,,month,,,,,,,,,proposed

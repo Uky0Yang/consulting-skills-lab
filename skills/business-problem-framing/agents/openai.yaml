@@ -1,0 +1,4 @@
+interface:
+  display_name: "Business Problem Framing"
+  short_description: "Frame decisions and test rival hypotheses"
+  default_prompt: "Use $business-problem-framing to turn this business request into a decision brief, issue tree and evidence plan."

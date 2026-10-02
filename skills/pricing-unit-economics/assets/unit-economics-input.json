@@ -1,0 +1,12 @@
+{
+  "fictional": true,
+  "currency": "GBP",
+  "period": "month",
+  "price": 120,
+  "variable_costs": {"hosting": 18, "service": 12, "payments": 3},
+  "fixed_costs": 12000,
+  "acquisition_spend": 24000,
+  "new_customers": 40,
+  "customers": 200,
+  "logo_churn": 0.025
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Expert Interview Synthesis"
+  short_description: "Turn interviews into traceable findings"
+  default_prompt: "Use $expert-interview-synthesis to prepare neutral questions and synthesize these notes into evidence-led findings."
